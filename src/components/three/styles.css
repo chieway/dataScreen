@@ -1,0 +1,348 @@
+    .center-center {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .r-box {
+        width: 73%;
+        height: 100%;
+    }
+
+    .l-box {
+        width: 25%;
+        height: 100%;
+    }
+
+    .l-box .header {
+        width: 100%;
+        height: 30%;
+        background: url(../../assets/three/XXbg.png) no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+    }
+
+    .l-box .header .l {
+        position: relative;
+        width: 141px;
+        height: 141px;
+
+    }
+
+    .l-box .header .l>div:nth-child(1) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: url(../../assets/three/server.png) no-repeat center center;
+        background-size: 100% 100%;
+        animation: rotate2 4s linear infinite;
+    }
+
+    .l-box .header .l>div:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @keyframes rotate2 {
+        form {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+
+    .l-box .header .footer-l {
+        position: relative;
+        width: 141px;
+        height: 141px;
+
+    }
+
+    .l-box .header .footer-l>div:nth-child(1) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: url(../../assets/three/134.png) no-repeat center center;
+        background-size: 100% 100%;
+        animation: rotate2 4s linear infinite;
+    }
+
+    .l-box .header .footer-l>div:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @keyframes rotate2 {
+        form {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    .l-box .header .r {
+        height: 141px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .l-box .center {
+        position: relative;
+        width: 100%;
+        height: 40%;
+        background: #091537;
+        box-shadow: 0px 3px 35px 0px #230808;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        -moz-transition: 1s;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
+    }
+
+    .l-box .center .item {
+        display: flex;
+        padding: 15px;
+        justify-content: space-between;
+    }
+
+    .l-box .center .equipment {
+        font-size: 18px;
+        font-weight: normal;
+        color: #FFFFFF;
+    }
+
+    .l-box .center .okButton {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        width: 95px;
+        height: 39px;
+        background: url(../../assets/three/button.png) no-repeat;
+        background-size: 100% 100%;
+        font-size: 18px;
+        font-family: Adobe Heiti Std;
+        font-weight: normal;
+        color: #00F5FF;
+    }
+
+    .l-box .footer {
+        width: 100%;
+        height: 30%;
+        background: url(../../assets/three/XXbg.png) no-repeat;
+        background-size: 100% 100%
+    }
+
+    .r-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between
+    }
+
+    .r-box .header {
+        width: 100%;
+        height: 32%;
+        background: url(../../assets/three/healthbg.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .header .guard-1 {
+        background: url(../../assets/three/mormal.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .header .guard-2 {
+        background: url(../../assets/three/off-line.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .header .guard-3 {
+        background: url(../../assets/three/warning.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .header .guard-4 {
+        background: url(../../assets/three/seriouswarn.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .header_1 {
+        width: 100%;
+        height: 22%;
+        background: transparent;
+        display: flex;
+        justify-content: space-between
+    }
+
+    .r-box .header_1 span {
+        color: #FFFFFF;
+    }
+
+    .r-box .header .l {
+        width: 30%;
+        height: 90%;
+        background: url(../../assets/three/xianxian.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .header .c {
+        width: 30%;
+        height: 85%;
+        background: url(../../assets/three/xianxian.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .header .r {
+        width: 30%;
+        height: 85%;
+        background: url(../../assets/three/xianxian.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .center {
+        width: 100%;
+        height: 32%;
+        display: flex;
+        justify-content: space-between
+    }
+
+    .r-box .footer {
+        width: 100%;
+        height: 32%;
+        display: flex;
+        justify-content: space-between
+    }
+
+    .r-box .center .left {
+        width: 30%;
+        height: 100%;
+        background: url(../../assets/three/quantityBG.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .center .right {
+        width: 68%;
+        height: 100%;
+        background: url(../../assets/three/135.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .footer .left {
+        width: 30%;
+        height: 100%;
+        background: url(../../assets/three/quantityBG.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .footer .left .l {
+        width: 42%;
+        height: 60%;
+        background: url(../../assets/three/44.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .footer .left .r {
+        width: 50%;
+        height: 82%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 14px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #e2caca;
+        line-height: 24px;
+    }
+
+    .r-box .footer .left .r .r-1 {
+        height: 20%;
+        width: 100%;
+        background: url(../../assets/three/redwarn.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .footer .left .r .r-2 {
+        height: 20%;
+        width: 100%;
+        background: url(../../assets/three/yellowvarn.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .footer .left .r .r-3 {
+        height: 20%;
+        width: 100%;
+        background: url(../../assets/three/bluewarn.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .footer .left .r .r-4 {
+        height: 20%;
+        width: 100%;
+        background: url(../../assets/three/greenwarn.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .r-box .footer .right {
+        width: 68%;
+        height: 100%;
+        background: url(../../assets/three/135.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .el-table,
+    .el-table tr,
+    .el-table td {
+        background-color: transparent !important;
+        border-top: 1px solid #384461;
+        border-bottom: 0 !important;
+        font-size: 16px;
+        color: #9DA2B1;
+    }
+
+    .el-table th.gutter {
+        background-color: transparent !important;
+    }
+
+    .el-table {
+        border-top: none !important;
+    }
+
+    .el-table th {
+        font-size: 18px;
+        color: #F9FAFB;
+        height: 40px !important;
+        border: none !important;
+    }
+
+    .el-table::before {
+        height: 0 !important;
+    }
+
+    .el-carousel__container {
+        height: 100% !important;
+    }
+
+    .degOn {
+        opacity: 1;
+    }
+
+    .degTw {
+        opacity: 0 !important;
+    }

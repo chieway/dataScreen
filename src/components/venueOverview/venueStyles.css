@@ -1,0 +1,294 @@
+.venueBox {
+    height: calc(100% - calc(85/10.8*1vh));
+    width: 100%;
+    padding: calc(15/19.2*1vw);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.venueLBox {
+    float: left;
+}
+
+.venueLBoxBg {
+    background: url(../../assets/venueLBoxBg.png) no-repeat center center;
+    background-size: contain;
+}
+
+.venueLBoxOne {
+    width: calc(454/19.2*1vw);
+    height: calc(313/10.8*1vh);
+}
+
+
+.venueLBoxTwo {
+    width: calc(454/19.2*1vw);
+    height: calc(313/10.8*1vh);
+}
+
+.venueLBoxTh {
+    width: calc(454/19.2*1vw);
+    height: calc(313/10.8*1vh);
+}
+
+
+
+
+.venueCdownBox {
+    position: absolute;
+    left: 50%;
+    bottom: calc(14/10.8*1vh);
+    transform: translate(-50%);
+    width: calc(949/19.2*1vw);
+    height: calc(52/10.8*1vh);
+    padding: 9px calc(66/19.2*1vw);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.venueCdownBox_box {
+    width: calc(289/19.2*1vw);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.venueCdownBox_boxTwo {
+    width: calc(200/19.2*1vw);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ybox {
+    display: block;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: rgba(26, 147, 234, 1);
+    line-height: 34px !important;
+}
+
+.venueCdownBox_boxSpan {
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 17px;
+}
+
+.venueLBoxOneTitleBox {
+    width: 100%;
+    height: calc(45/10.8*1vh);
+    padding: 5px 16px;
+    box-sizing: border-box;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.venueLBoxOneComBox {
+    width: 100%;
+    height: calc(100% - calc(45/10.8*1vh));
+}
+
+.venueLBoxOneTitleBoxImg {
+    display: block;
+    width: calc(15/19.2*1vw);
+    height: calc(15/10.8*1vh);
+    background: url(../../assets/venueLBoxThTitleImg.png) no-repeat center center;
+    background-size: 100%;
+}
+
+.venueLBoxOneTitleBoxtitle {
+    font-size: calc(16/19.2*1vw);
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: calc(22/19.2*1vw);
+    margin-left: calc(6/19.2*1vw);
+}
+
+.venueRBox {
+    float: right;
+    width: calc(454/19.2*1vw);
+    height: calc(968/10.8*1vh);
+    background: url(../../assets/venueRBoxBg.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.venueRBoxButtonBox {
+    width: calc(372/19.2*1vw);
+    height: calc(31/10.8*1vh);
+    margin: calc(12/10.8*1vh) auto 0;
+    /* background-color: #fff; */
+    display: flex;
+}
+
+.venueRBoxButtonL {
+    width: calc(190/19.2*1vw);
+    height: calc(31/10.8*1vh);
+    background: url(../../assets/venueRBoxButtonL.png) no-repeat center center;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+}
+
+.venueRBoxButton {
+    width: calc(190/19.2*1vw);
+    height: calc(31/10.8*1vh);
+    background: url(../../assets/venueRBoxButton.png) no-repeat center center;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+}
+
+.venueRBoxButtonSpan {
+    display: block;
+    width: calc(56/19.2*1vw);
+    height: calc(20/10.8*1vh);
+    font-size: calc(14/19.2*1vw);
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #B8D6E3;
+    line-height: calc(20/10.8*1vh);
+    margin: 0 auto;
+}
+
+.venueRBoxTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 calc(15/19.2*1vw);
+    box-sizing: border-box;
+
+}
+
+.venueRBoxTitleLift {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: calc(16/19.2*1vw);
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.venueRBoxChangeBox {
+    height: calc(100% - calc(105/10.8*1vh));
+    width: calc(454/19.2*1vw);
+    box-sizing: border-box;
+    padding: 0 calc(17/19.2*1vw);
+    overflow: hidden;
+    overflow-y: auto;
+
+}
+
+.venueRBoxChangeBox_boxBg {
+    height: calc(214/10.8*1vh);
+    width: calc(420/19.2*1vw);
+    margin: 0 auto 15px;
+    background: url(../../assets/venueRBoxChangeBox_boxBg.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.venueRBoxChangeBox_boxTitleBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(30/10.8*1vh);
+}
+
+.boxBgTitleBoxName {
+    height: calc(30/10.8*1vh);
+    line-height: calc(30/10.8*1vh);
+    padding-left: calc(15/19.2*1vw);
+    font-size: calc(14/19.2*1vw);
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.boxBgTitleBoxIcon {
+    width: calc(24/19.2*1vw);
+    height: calc(24/10.8*1vh);
+    color: #4EC2FF;
+    margin-right: calc(15/19.2*1vw);
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background: url(../../assets/icon07.png) no-repeat center center;
+    background-size: contain;
+}
+
+.venueRBoxChangeBox_boxContentBox {
+    height: calc(100% - calc(30/10.8*1vh));
+    width: 100%;
+    padding: calc(13/19.2*1vw) calc(13/10.8*1vh);
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.v_boxContentBox {
+    height: calc(66/10.8*1vh);
+    width: calc(180/19.2*1vw);
+
+    display: flex;
+    align-items: center;
+}
+
+.v_boxContentBoxImg {
+    height: calc(53/10.8*1vh);
+    width: calc(53/19.2*1vw);
+    background: url(../../assets/boxContentIconOne.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.v_boxContentBoxDetailsBox {
+    height: calc(66/10.8*1vh);
+    width: calc(118/19.2*1vw);
+}
+
+.v_boxContentBoxDetailsTitle {
+    width: calc(70/19.2*1vw);
+    height:  calc(22/10.8*1vh);
+    font-size: calc(14/19.2*1vw);
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #01D6FD;
+    line-height: calc(22/19.2*1vw);
+    margin-left: calc(9/19.2*1vw);
+}
+
+.v_DetailsOne {
+    width: calc(118/19.2*1vw);
+    height:  calc(22/10.8*1vh);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.v_DetailsOneL {
+    width: 41px;
+    height:  calc(22/10.8*1vh);
+    font-size: calc(12/19.2*1vw);
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 22px;
+}
+.v_DetailsOneR {
+    width: 71px;
+    height:  calc(22/10.8*1vh);
+    font-size: calc(14/19.2*1vw);
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #01D6FD;
+    line-height: calc(22/19.2*1vw);
+}

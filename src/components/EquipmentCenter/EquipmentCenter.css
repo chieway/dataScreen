@@ -1,0 +1,449 @@
+.boxC {
+    /* width:calc(100% - 20px);*/
+    /* height:calc(100% - 20px) ;  */
+    width: 100%;
+    height: 100%;
+    /* width: 100px;
+    height: 100px; */
+    /* box-sizing: border-box; */
+    /*h963px ;w1882px*/
+    background-color: #99a;
+    /* padding: 10px; */
+    overflow: hidden;
+    /* margin: 10px; */
+}
+
+.el-row {
+    /* margin-bottom: 20px; */
+}
+
+.el-row:last-child {
+    margin-bottom: 0;
+}
+
+.el-col {
+    border-radius: 4px;
+}
+
+.bg-purple-dark {
+    background: #99a9bf;
+}
+
+.bg-purple {
+    background: #fff;
+}
+
+.bg-purple-light {
+    background: #e5e9f2;
+}
+
+.grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+}
+
+.row-bg {
+    /* padding: 10px 0; */
+    background-color: #f9fafc;
+}
+
+.queryBox {
+    width: 100%;
+    height: 17%;
+    background: url(../../assets/imgcenter/queryBoxBg.png) no-repeat center center;
+    background-size: 100% 100%;
+    top: -30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+
+}
+
+.queryBoxL {
+    width: 22%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    background: url(../../assets/imgcenter/bgquery.png) no-repeat center center;
+}
+
+.queryBoxLShow {
+    width: 32%;
+    height: 50%;
+    background: url(../../assets/imgcenter/queryBoxButton.png) no-repeat center center;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.queryBxtoxLShowText {
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding-left: 15px;
+}
+
+.queryBoxLSelse {
+    width: 68%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    position: relative;
+}
+
+.queryBoxLSelseInput {
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.queryBoxLSelseIcon {
+    position: absolute;
+    right: 10px;
+}
+
+.queryBoxLSelseBox {
+    position: absolute;
+    top: calc(100% - 10px);
+    left: -1px;
+    width: 100%;
+    height: 360%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: RGBA(9, 52, 105, .7);
+    z-index: 2;
+}
+
+.queryBoxLSelseBoxText {
+    text-align: left;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 10px 0px;
+}
+
+.queryBoxLSelseBoxText:hover {
+
+    cursor: pointer;
+    background-color: #04C1CD;
+}
+
+.queryBoxC {
+    width: 30%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: antiquewhite; */
+}
+
+.queryBoxCL {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: url(../../assets/imgcenter/bgquery.png) no-repeat center center;
+}
+
+.queryCBoxButton {
+    margin-left: 14px;
+    width: 20%;
+    height: 100%;
+    background: url(../../assets/imgcenter/queryCBoxButton.png) no-repeat center center;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #00C8E7;
+}
+
+.queryBoxR {
+    width: 42%;
+    height: 30%;
+    /* background-color: chartreuse; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.queryBoxRShow {
+    width: 20%;
+}
+
+.queryBoxCol {
+    display: flex;
+    align-items: center;
+}
+
+.dataStatisticsBox {
+    width: 100%;
+    height: 30%;
+    background: url(../../assets/imgcenter/dataStatisticsBoxBg.png) no-repeat center center;
+    background-size: 100% 100%;
+    position: absolute;
+    top: -90px;
+    position: relative;
+}
+
+.dataStatisticsBoxTitle {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    height: 15%;
+    padding: 10px;
+}
+
+.dataStatisticsBoxTitlLine {
+    width: calc(100% - 20px);
+    height: 100%;
+    border-bottom: 1px solid #999;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.dataStatisticsBoxTitlLine::after {
+    content: "";
+    position: absolute;
+    top: 38px;
+    left: 9px;
+    width: 13px;
+    height: 4px;
+    background-color: #fff;
+}
+
+
+.dataStatisticsBoxTitleImg {
+    vertical-align: middle;
+    float: left;
+    margin-right: 10px;
+}
+
+.dataStatisticsBoxText {
+    float: left;
+    font-size: 16px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #FFFFFF;
+    vertical-align: middle;
+    padding-top: 10px;
+}
+
+.dataStatisticsBoxList {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    height: 30%;
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dataStatisticsBoxListBox {
+    width: 13%;
+    height: 100%;
+    background: url(../../assets/imgcenter/dataStatisticsBoxListBoxBg.png) no-repeat center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dataStatisticsBoxListBoximg {
+    flex: 1;
+}
+
+.dataStatisticsBoxListBoxText {
+    flex: 2;
+    font-size: 18px;
+    font-family: AlibabaPuHuiTi;
+    font-weight: 400;
+    color: #04C1CD;
+    line-height: 24px;
+    text-align: left;
+}
+
+.cardBox {
+    position: absolute;
+    top: -15%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.cardStyleW {
+    position: relative;
+    top: -2%;
+    width: 96%;
+    height: 33%;
+}
+
+.cardStyleW2 {
+    position: relative;
+    top: -6%;
+    width: 96%;
+    height: 33%;
+}
+
+.cardStyleW3 {
+    position: relative;
+    top: -10%;
+    width: 96%;
+    height: 33%;
+}
+
+.cardStyle {
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/imgcenter/cardbg.png) no-repeat center center;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.cardStyle2 {
+    /* width: 412px;
+    height: 223px; */
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/imgcenter/cardbg.png) no-repeat center center;
+    /* background: #000;s */
+    background-size: 100% 100%;
+    position: relative;
+    top: -2%;
+}
+
+.cardStyle3 {
+    /* width: 412px;
+    height: 223px; */
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/imgcenter/cardbg.png) no-repeat center center;
+    /* background: #000;s */
+    background-size: 100% 100%;
+    position: relative;
+    top: -20%;
+}
+
+.cardStyleTitle {
+    position: absolute;
+    top: 18%;
+    left: 6%;
+    width: calc(100% - 60px);
+    height: 20px;
+    border-bottom: 1px solid #999;
+    padding: 10px;
+}
+
+.cardStyleTitle::after {
+    content: "";
+    position: absolute;
+    top: 38px;
+    left: 9px;
+    width: 13px;
+    height: 4px;
+    background-color: #fff;
+}
+
+.cardStyleTitleImg {
+    float: left;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.cardStyleTitleText {
+    float: left;
+    font-size: 16px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #FFFFFF;
+    vertical-align: middle
+}
+
+.cardStyleCheckbox {
+    float: right;
+}
+.cardStyleCheckbox .el-checkbox__inner{
+    /* background-color: RGBA(24, 255, 225, 1) ; */
+    border-color: RGBA(24, 255, 225, 1) !important;
+}
+
+/* .cardStyleConter {
+
+    width: 100%;
+    display: flex;
+    background: url(../../assets/imgcenter/commonly.png) no-repeat center;
+} */
+
+.cardStyleConter {
+    width: 100%;
+    display: flex;
+    height: 70%;
+    position: absolute;
+    top: 33%;
+}
+
+
+.cardStyleConterImgY {
+    position: relative;
+    height: 110%;
+    width: 80%;
+    display: flex;
+    background: url(../../assets/imgcenter/serious.png) no-repeat center;
+}
+
+.cardStyleConterImgG {
+    position: relative;
+    height: 110%;
+    width: 80%;
+    display: flex;
+    background: url(../../assets/imgcenter/good.png) no-repeat center;
+
+}
+
+.cardStyleConterImgC {
+    position: relative;
+    height: 110%;
+    width: 80%;
+    display: flex;
+    background: url(../../assets/imgcenter/commonly.png) no-repeat center;
+
+}
+
+.cardStyleConterR {
+    width: 100%;
+    height: 100%;
+}
+
+.cardStyleConterRImgU {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    background: url(../../assets/imgcenter/ki.png) no-repeat center;
+}
+
+.cardStyleConterRImgD {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    background: url(../../assets/imgcenter/ik.png) no-repeat center;
+}
+
+.cardStyleConterFalgName {
+    font-size: 30px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #0DFF8A;
+    font-weight: 700;
+    line-height: 28px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
