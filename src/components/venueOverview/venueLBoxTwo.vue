@@ -57,29 +57,43 @@ export default {
           type: "category",
           boundaryGap: [0, 0.01],
           axisLine: { show: true },
-          axisLabel: { color: "#C1EDFF", formatter: "{value}%" },
+          // axisLabel: { color: "#C1EDFF", formatter: "{value}%" },
           axisLabel: {
-            width: 68,
-            interval:3,
-            height: 34,
-            margin: 8.5,
-            color: "#C1EDFF"
+            // width: 68,
+            // interval:3,
+            // height: 34,
+            // margin: 8.5,
+            color: "#C1EDFF",
+            // formatter: "{value}%"
           },
           data: [
-            "当年实际",
-            "","","",
-            "当年预算",
-            "","","",
-            "20年同期",
-            "","","",
-            "19年同期",
+            "切割设备",
+            "焊接设备",
+            "打标设备",
+            "自动化设备",
           ],
+          // data: [
+          //   "切割设备",
+          //   "","","",
+          //   "焊接设备",
+          //   "","","",
+          //   "打标设备",
+          //   "","","",
+          //   "自动化设备",
+          // ],
         },
         yAxis: {
           type: "value",
           axisLine: { show: false },
           axisTick: { show: false },
-          axisLabel: { color: "#C1EDFF" },
+          axisLabel: { 
+            color: "#C1EDFF",
+            // formatter: '{value} 万'
+          },
+          name: '（台）',
+          nameTextStyle: {
+            color:"#fff"
+          },
           splitLine: {
             show: true,
             lineStyle: {
@@ -91,7 +105,7 @@ export default {
 
         series: [
           {
-            name: "运行指标完成率",
+            name: "生产设备数量",
             type: "line",
             barGap: 0,
              symbolSize: 0,
@@ -117,11 +131,12 @@ export default {
                 shadowBlur: 20 //shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
             }
         },
-
-            data: [320, 332, 301, 334, 390,332, 301, 334,332, 301, 334,332, 301,],
+        // data: [34,0,0,0,22,0,0,0,18,0,0,0,36],
+        data: [34,22,18,36],
+            // data: [320, 332, 301, 334, 390,332, 301, 334,332, 301, 334,332, 301,],
           },
           {
-            name: "技术指标完成率",
+            name: "交付设备数量",
             type: "line",
              symbolSize: 0,
             emphasis: {
@@ -150,7 +165,9 @@ export default {
                 shadowBlur: 20 //shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
             }
         },
-            data: [220, 182,334, 390,332, 301, 334,332, 301, 191,182,334, 234,],
+        // data: [26,100,100,100,18,100,100,100,24,100,100,100,20],
+        data: [26,18,24,20],
+            // data: [220, 182,334, 390,332, 301, 334,332, 301, 191,182,334, 234,],
           },
         
         ],

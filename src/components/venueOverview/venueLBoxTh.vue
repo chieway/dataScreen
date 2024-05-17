@@ -66,14 +66,18 @@ export default {
             color: "#C1EDFF"
           },
           data: [
-            "经营活动现金流",
-            "经营活动现金流系数",
-            "投资活动现金流",
-            "自由现金流",
+            "切割设备",
+            "焊接设备",
+            "打标设备",
+            "自动化设备",
           ],
         },
         yAxis: {
           type: "value",
+          name: '（次）',
+          nameTextStyle: {
+            color:"#fff"
+          },
           axisLine: { show: false },
           axisTick: { show: false },
           axisLabel: { color: "#C1EDFF" },
@@ -86,10 +90,9 @@ export default {
             },
           },
         },
-
         series: [
           {
-            name: "",
+            name: "故障报工",
             type: "bar",
             barGap: 0,
             emphasis: {
@@ -98,11 +101,10 @@ export default {
             itemStyle: {
               color: "red",
             },
-
-            data: [320, 332, 301, 334, 390],
+            data: [12,16,11,21],
           },
           {
-            name: " ",
+            name: "现场检修",
             type: "bar",
             emphasis: {
               focus: "series",
@@ -110,10 +112,10 @@ export default {
             itemStyle: {
               color: "#1A93EA",
             },
-            data: [220, 182, 191, 234, 290],
+            data: [8, 12,5,15],
           },
           {
-            name: "",
+            name: "更换零件",
             type: "bar",
             emphasis: {
               focus: "series",
@@ -121,7 +123,7 @@ export default {
             itemStyle: {
               color: "#1ADB99",
             },
-            data: [150, 232, 201, 154, 190],
+            data: [5,5,3,8],
           },
         ],
       };

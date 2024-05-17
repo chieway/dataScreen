@@ -101,7 +101,7 @@
               v-show="!value1"
               src="../../assets/three/no777.png"
             />
-            <img
+            <!-- <img
               @click="value2 = !value2"
               v-show="value2"
               src="../../assets/three/offo777 .png"
@@ -110,7 +110,7 @@
               @click="value2 = !value2"
               v-show="!value2"
               src="../../assets/three/no777.png"
-            />
+            /> -->
           </span>
         </div>
         <div class="item">
@@ -139,13 +139,14 @@
               opacity: 0.5;
               width: 100%;
               height: 53%;
-              overflow: hidden;
+              overflow-y: auto;
+              overflow-x: hidden;
             "
           >
             {{ detail }}{{ deg1 }}
           </div>
         </div>
-        <div class="okButton center-center" @click="handleOk">确认</div>
+        <!-- <div class="okButton center-center" @click="handleOk">确认</div> -->
       </div>
     </div>
 
@@ -219,6 +220,8 @@
 </template>
 
 <script>
+import dayjs from 'dayjs';
+
 export default {
   name: "left",
 
@@ -230,25 +233,28 @@ export default {
       deg1: 0,
       event: [
         {
-          msg: "xx事件",
-          address: "xxx栋xxx座xx层",
-          time: "2021.06.24 13:24:25",
+          msg: "设备故障",
+          address: "东莞黄牛埔生产基地门式起重机故障",
+          // 21分12秒前----1272
+          time: dayjs().subtract(1272,'second').format('YYYY-MM-DD HH:MM:ss'),
           state: "严重",
         },
         {
-          msg: "xx事件",
-          address: "xxx栋xxx座xx层",
-          time: "2021.06.24 13:24:25",
+          msg: "停电事件",
+          address: "东莞黄江镇智能制造基地部分线路故障",
+          time: dayjs().subtract(178572,'s').format('YYYY-MM-DD HH:MM:ss'),
           state: "一般",
         },
       ],
       grade: "一级",
-      address: "xxx栋xxx座xx层",
+      address: "广东东莞黄牛埔智能制造基地A栋",
       detail:
-        "设备详情设备详情设备详情设备详情设备详情设备详情设备详情设设备详情设备详情设备详情设备详情设备详情设备详情设备详情设设备详情设备详情设备详情设备详情设备详情设备详情设备详情设设备详情设备详情设备详情设备详情设备详情设备详情设备详情设设备详情设备详情设备详情设备详情设备详情设备详情设备详情设设备详情设备详情设备详情设备详情设备详情设备详情设备详情设设备详情设备详情设备详情设备详情设备详情设备详情设备详情设设备详情设备详情设备详情设备详情设备详情设备详情设备详情设备详情设备详情设备详情",
+        "门式起重机是在桥式起重机基础上改良而来的，可以用在厂房的外的物料场等场所，来进行货物的装卸。这种起重机的金属结构外形类似门框，在主梁的两端分别有一条支脚，能在地面的轨道上进行载荷运动，主梁的两端还具有外伸悬臂梁的功能。因为门式起重机的场地利用率、作业半径较大以及通用性较好等优点，在一些港口、厂房中得到广泛的应用。",
     };
   },
-  mounted() {},
+  mounted() {
+    console.log('----',dayjs().subtract(60,'second').format('YYYY-MM-DD HH:MM:ss'))
+  },
   methods: {
     handleOk() {
       console.log("确认");

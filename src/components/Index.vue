@@ -32,11 +32,12 @@
         src="../assets/header.png"
       />
       <div class="header_left">
-        <img src="../assets/logo.png" alt="title" />
-        <img src="../assets/logoTitle.png" alt="title" />
+        <img src="../assets/logo.png" class="logo" alt="title" />
+        <span class="text">绍辉超级激光物联大数据平台</span>
+        <!-- <img src="../assets/logoTitle.png" alt="title" /> -->
       </div>
       <div class="header_center">
-        <div
+        <!-- <div
           :class="msg === '0' ? 'hover_1 header_1' : 'header_1'"
           @click="clickHover('0')"
         >
@@ -45,14 +46,23 @@
               >场馆总览
             </span>
           </span>
-        </div>
+        </div> -->
         <div
-          :class="msg === '1' ? 'hover_1 header_1' : 'header_1'"
-          @click="clickHover('1')"
+          :class="msg === '4' ? 'hover_1 header_1' : 'header_1'"
+          @click="clickHover('4')"
         >
           <span
-            ><img src="../assets/monitoringCenter.png" alt="" />
-            <span>监控中心</span>
+            ><img src="../assets/virtualSpace.png" alt="" />
+            <span>指挥中心</span>
+          </span>
+        </div>
+        <div
+          :class="msg === '3' ? 'hover_1 header_1' : 'header_1'"
+          @click="clickHover('3')"
+        >
+          <span
+            ><img src="../assets/virtualSpace.png" alt="" />
+            <span>管理中心</span>
           </span>
         </div>
         <div
@@ -64,23 +74,13 @@
             <span>设备中心</span>
           </span>
         </div>
-
         <div
-          :class="msg === '3' ? 'hover_1 header_1' : 'header_1'"
-          @click="clickHover('3')"
+          :class="msg === '1' ? 'hover_1 header_1' : 'header_1'"
+          @click="clickHover('1')"
         >
           <span
-            ><img src="../assets/virtualSpace.png" alt="" />
-            <span>虚拟空间</span>
-          </span>
-        </div>
-        <div
-          :class="msg === '4' ? 'hover_1 header_1' : 'header_1'"
-          @click="clickHover('4')"
-        >
-          <span
-            ><img src="../assets/virtualSpace.png" alt="" />
-            <span>详情</span>
+            ><img src="../assets/monitoringCenter.png" alt="" />
+            <span>数智制造</span>
           </span>
         </div>
       </div>
@@ -168,6 +168,7 @@ import Two from "@/components/archives.vue";
 import Three from "@/components/three";
 import Four from "@/components/venueOverview/venue.vue";
 import EquipmentCenter from "@/components/EquipmentCenter/EquipmentCenter.vue";
+import dayjs from "dayjs";
 
 export default {
   name: "Index",
@@ -181,11 +182,21 @@ export default {
   },
   data() {
     return {
-      time: "18:08:08",
-      msg: "0",
-      date: "2018.10.4",
+      time: "",
+      msg: "4",
+      date: "",
       varChangeFlag: "buttonTitleO",
+      timer: null,
     };
+  },
+  created() {
+    this.timer = setInterval(() => {
+      this.date = dayjs().format('YYYY.MM.DD')
+      this.time = dayjs().format('HH:mm:ss')
+    },1000)
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
   },
   methods: {
     clickHover(v) {
@@ -219,6 +230,15 @@ export default {
   height: 100%;
   padding-left: 30px;
   /* justify-content: center; */
+}
+.header_left .logo {
+  width: 110px;
+  height: 60px;
+}
+.header_left .text {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
 }
 .header_center {
   width: 50%;

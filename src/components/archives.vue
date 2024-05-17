@@ -10,56 +10,6 @@
   >
     <div class="boxC">
       <div class="up">
-        <div class="inputSelect">
-          <el-select
-            ref="selectTree"
-            v-model="form.Id"
-            filterable
-            placeholder="请选择..."
-          >
-            <el-option
-              :key="form.Id"
-              :value="form.Id"
-              :label="form.label"
-              style="height: auto"
-              hidden
-            />
-            <el-tree
-              style="backgroundcolor: RGBA(12, 28, 71, 1); color: #fff"
-              ref="tree"
-              :data="data"
-              :props="defaultProps"
-              :node-key="defaultProps.value"
-              @node-click="handleNodeClick"
-              default-expand-all
-            />
-          </el-select>
-          
-        </div>
-        <div class="buttonSelect">
-          <div
-            class="buttonSelectStyle"
-            v-for="(item, i) in upRightData"
-            :key="i"
-            @click="item.flag = !item.flag"
-          >
-            <img
-              v-if="item.flag"
-              src="../assets/img/tureImg.png"
-              class="tureImgStyle"
-            />
-            <img
-              :src="[item.flag ? item.imgOneL : item.imgOne]"
-              height="24"
-              width="24"
-              align="AbsMiddle"
-            />
-            <span v-if="item.flag" style="color: rgb(1, 216, 255)">{{
-              item.imgOneName
-            }}</span>
-            <span v-if="!item.flag">{{ item.imgOneName }}</span>
-          </div>
-        </div>
         <div
           v-for="(item, i) in CameraNoneData"
           :key="i"
@@ -114,7 +64,7 @@
                       item.humidity
                     }}</span
                     ><br />
-                    <span class="downContentModelUpModelStyleTwo">30%</span>
+                    <!-- <span class="downContentModelUpModelStyleTwo">30%</span> -->
                   </div>
                 </div>
               </div>
@@ -313,10 +263,10 @@ export default {
       listOneLine: [
         // '当前温度','今日平均温度', '今日最大温度', '今日最小温度'
         {
-          temperature: "当前温度",
-          temperatureValue: "37℃",
-          humidity: "当前湿度",
-          humidityValue: "30%",
+          temperature: "实时监测设备温度",
+          temperatureValue: "",
+          humidity: "实时监测空气湿度",
+          humidityValue: "",
           imgOne: require("../assets/img/accessControl.png"),
           imgOneName: "门禁",
           imgTh: require("../assets/img/lighting.png"),
@@ -335,9 +285,9 @@ export default {
           buttonImgThStatus: true,
         },
         {
-          temperature: "今日平均温度",
-          temperatureValue: "37℃",
-          humidity: "今日平均湿度",
+          temperature: "耗材更换及时通知",
+          temperatureValue: "",
+          humidity: "设备异常实时告警",
           humidityValue: "30%",
           imgTh: require("../assets/img/airConditioner.png"),
           imgThName: "空调",
@@ -355,9 +305,9 @@ export default {
           buttonImgThStatus: true,
         },
         {
-          temperature: "今日最大温度",
-          temperatureValue: "37℃",
-          humidity: "今日最大湿度",
+          temperature: "运行状态数据",
+          temperatureValue: "",
+          humidity: "定期上门保养",
           humidityValue: "30%",
           imgTh: require("../assets/img/fan.png"),
           imgThName: "风机",
@@ -375,9 +325,9 @@ export default {
           buttonImgThStatus: true,
         },
         {
-          temperature: "今日最小温度",
-          temperatureValue: "37℃",
-          humidity: "今日最小湿度",
+          temperature: "生产效能监测",
+          temperatureValue: "",
+          humidity: "物联数据监测",
           humidityValue: "30%",
           imgTwo: require("../assets/img/infra-red.png"),
           imgTwoName: "红外",
@@ -406,9 +356,9 @@ export default {
           humidity: "当前湿度",
           humidityValue: "30%",
           imgOne: require("../assets/img/accessControl.png"),
-          imgOneName: "门禁",
+          imgOneName: "紧急通道",
           imgTh: require("../assets/img/lighting.png"),
-          imgThName: "照明",
+          imgThName: "应急光源",
           buttonImgOneL: require("../assets/img/openDoorL.png"),
           buttonImgOne: require("../assets/img/openDoor.png"),
           buttonImgOneName: "开门",
@@ -428,7 +378,7 @@ export default {
           humidity: "今日平均湿度",
           humidityValue: "30%",
           imgTh: require("../assets/img/airConditioner.png"),
-          imgThName: "空调",
+          imgThName: "应急光源",
           buttonImgOne: require("../assets/img/closeLight.png"),
           buttonImgOneL: require("../assets/img/openLight.png"),
           buttonImgOneName: "关灯",
@@ -448,7 +398,7 @@ export default {
           humidity: "今日最大湿度",
           humidityValue: "30%",
           imgTh: require("../assets/img/fan.png"),
-          imgThName: "风机",
+          imgThName: "空调节能",
           buttonImgOne: require("../assets/img/closeLight.png"),
           buttonImgOneL: require("../assets/img/openLight.png"),
           buttonImgOneName: "关灯",
@@ -468,7 +418,7 @@ export default {
           humidity: "今日最小湿度",
           humidityValue: "30%",
           imgTwo: require("../assets/img/infra-red.png"),
-          imgTwoName: "红外",
+          imgTwoName: "安全防护",
           buttonImgOne: require("../assets/img/close.png"),
           buttonImgOneL: require("../assets/img/closeL.png"),
           buttonImgOneName: "关闭",
@@ -485,28 +435,28 @@ export default {
           buttonImgThStatus: true,
         },
         // {temperature:'今日最小温度',temperatureValue:'37℃',humidity:'今日最小湿度',humidityValue:'30%'},
-        {
-          temperature: "今日最小温度",
-          temperatureValue: "37℃",
-          humidity: "今日最小湿度",
-          humidityValue: "30%",
-          imgTwo: require("../assets/img/infra-red.png"),
-          imgTwoName: "红外",
-          buttonImgOne: require("../assets/img/close.png"),
-          buttonImgOneL: require("../assets/img/closeL.png"),
-          buttonImgOneName: "关闭",
-          buttonImgOneStatus: true,
-          buttonImgTwo: require("../assets/img/deployTroopsForDefence.png"),
-          buttonImgTwoL: require("../assets/img/deployTroopsForDefenceL.png"),
+        // {
+        //   temperature: "今日最小温度",
+        //   temperatureValue: "37℃",
+        //   humidity: "今日最小湿度",
+        //   humidityValue: "30%",
+        //   imgTwo: require("../assets/img/infra-red.png"),
+        //   imgTwoName: "红外",
+        //   buttonImgOne: require("../assets/img/close.png"),
+        //   buttonImgOneL: require("../assets/img/closeL.png"),
+        //   buttonImgOneName: "关闭",
+        //   buttonImgOneStatus: true,
+        //   buttonImgTwo: require("../assets/img/deployTroopsForDefence.png"),
+        //   buttonImgTwoL: require("../assets/img/deployTroopsForDefenceL.png"),
 
-          buttonImgTwoName: "布防",
-          buttonImgTwoStatus: false,
-          buttonImgTh: require("../assets/img/disarm.png"),
-          buttonImgThL: require("../assets/img/disarmL.png"),
+        //   buttonImgTwoName: "布防",
+        //   buttonImgTwoStatus: false,
+        //   buttonImgTh: require("../assets/img/disarm.png"),
+        //   buttonImgThL: require("../assets/img/disarmL.png"),
 
-          buttonImgThName: "撤防",
-          buttonImgThStatus: true,
-        },
+        //   buttonImgThName: "撤防",
+        //   buttonImgThStatus: true,
+        // },
       ],
     };
   },

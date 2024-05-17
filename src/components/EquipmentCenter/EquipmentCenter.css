@@ -112,7 +112,7 @@
     top: calc(100% - 10px);
     left: -1px;
     width: 100%;
-    height: 360%;
+    height: 500%;
     padding: 10px;
     box-sizing: border-box;
     background-color: RGBA(9, 52, 105, .7);
@@ -426,6 +426,15 @@
     height: 50%;
     width: 100%;
     background: url(../../assets/imgcenter/ki.png) no-repeat center;
+
+}
+.cardStyleConterRImgU .text {
+    position: absolute;
+    left: 32px;
+    top: 22px;
+    font-size: 15px;
+    color: #ddd;
+    background: rgb(11,54,102);
 }
 
 .cardStyleConterRImgD {

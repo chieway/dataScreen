@@ -84,12 +84,12 @@
             alt=""
             align="Asbmiddle"
           />
-          <span class="queryBxtoxLShowText">设备按钮</span>
+          <span class="queryBxtoxLShowText">筛选</span>
         </div>
-        <div class="queryCBoxButton">开</div>
-        <div class="queryCBoxButton">关</div>
-        <div class="queryCBoxButton">按钮1</div>
-        <div class="queryCBoxButton">按钮2</div>
+        <div class="queryCBoxButton">告警设备</div>
+        <div class="queryCBoxButton">掉线设备</div>
+        <div class="queryCBoxButton">保修设备</div>
+        <div class="queryCBoxButton">报废设备</div>
       </div>
     </el-row>
     <el-row class="dataStatisticsBox">
@@ -112,7 +112,7 @@
           <div class="dataStatisticsBoxListBoxText">
             <span>{{ item.name }}</span>
             <br />
-            <span>{{ item.number }}个</span>
+            <span>{{ item.number }}台</span>
           </div>
         </div>
       </div>
@@ -160,7 +160,9 @@
               >
             </div>
             <div class="cardStyleConterR">
-              <div class="cardStyleConterRImgU"></div>
+              <div class="cardStyleConterRImgU">
+                <div class="text">运行状态</div>
+              </div>
               <div class="cardStyleConterRImgD"></div>
             </div>
           </div>
@@ -178,51 +180,51 @@ export default {
       timeInfo: {},
       queryBoxLSelseBoxFlag: false,
       queryBoxLSelseBoxFlagC: false,
-      queryBoxLSelseInputData: "照明",
+      queryBoxLSelseInputData: "切割设备",
       queryBoxLSelseInputDataC: "请输入",
-      queryBoxLSelseBoxTextData: ["照明1", "照明2", "照明3"],
+      queryBoxLSelseBoxTextData: ["切割设备", "焊接设备", "打标设备","自动化设备"],
       dataStatisticsListData: [
         {
           id: "1",
           name: "设备数量",
-          number: "60",
+          number: "501583",
           img: require("../../assets/imgcenter/tem.png"),
         },
         {
           id: "2",
           name: "在线设备",
-          number: "10",
+          number: "463377",
           img: require("../../assets/imgcenter/temT.png"),
         },
         {
           id: "3",
           name: "掉线设备",
-          number: "20",
+          number: "86",
           img: require("../../assets/imgcenter/temg.png"),
         },
         {
           id: "4",
           name: "告警设备",
-          number: "10",
+          number: "12",
           img: require("../../assets/imgcenter/temD.png"),
         },
         {
           id: "5",
           name: "保修设备",
-          number: "10",
+          number: "38268",
           img: require("../../assets/imgcenter/temF.png"),
         },
         {
           id: "6",
           name: "报废设备",
-          number: "10",
+          number: "38120",
           img: require("../../assets/imgcenter/temJ.png"),
         },
       ],
       dataCard: [
         {
           Id: 1,
-          label: " 照明设备001—— xx栋xx楼",
+          label: "大光新材-LS101S86",
           checked: true,
           color: "red",
           falgName: "",

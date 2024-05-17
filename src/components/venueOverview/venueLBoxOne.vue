@@ -66,18 +66,24 @@ export default {
             color: "#C1EDFF"
           },
           data: [
-            "PC",
-            "己内酰胺",
-            "尼龙6",
-            "多元醇",
-            "瑞恒硝基氯丙苯",
+            "切割设备",
+            "焊接设备",
+            "打标设备",
+            "自动化设备",
           ],
         },
         yAxis: {
           type: "value",
           axisLine: { show: false },
           axisTick: { show: false },
-          axisLabel: { color: "#C1EDFF" },
+          name: '（万元）',
+          nameTextStyle: {
+            color:"#fff"
+          },
+          axisLabel: { 
+            color: "#C1EDFF",
+            // formatter: '{value} 万'
+          },
           splitLine: {
             // interval: 101,
             show: true,
@@ -90,7 +96,7 @@ export default {
 
         series: [
           {
-            name: "运行指标完成率",
+            name: "签约合同金额",
             type: "line",
             barGap: 0,
             symbolSize: 0,
@@ -100,12 +106,10 @@ export default {
             itemStyle: {
               color: "#009CDE",
             },
-
-            data: [150, 332, 301, 334, 390],
+            data: [340,220,280,360]
           },
-       
           {
-            name: "技术指标完成率",
+            name: "回款合同金额",
             type: "line",
              symbolSize: 0,
             emphasis: {
@@ -114,7 +118,7 @@ export default {
             itemStyle: {
               color: "#FFB557",
             },
-            data: [350, 232, 201, 154, 190],
+            data: [263,281,364,317],
           },
         ],
       };

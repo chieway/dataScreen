@@ -8,7 +8,7 @@
             src="../../assets/three/security.png"
             alt=""
           />
-          <span>健康度</span>
+          <span>安全生产</span>
         </div>
       </div>
 
@@ -163,7 +163,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                        维修
                       </div>
                     </div>
                   </div>
@@ -184,7 +184,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >门禁系统</span
+                    >消防系统</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -318,7 +318,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                        维修
                       </div>
                     </div>
                   </div>
@@ -339,7 +339,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >广播系统</span
+                    >生产线</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -473,7 +473,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                      维修
                       </div>
                     </div>
                   </div>
@@ -632,7 +632,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                      维修
                       </div>
                     </div>
                   </div>
@@ -653,7 +653,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >门禁系统</span
+                    >消防系统</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -787,7 +787,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                      维修
                       </div>
                     </div>
                   </div>
@@ -808,7 +808,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >广播系统</span
+                    >生产线</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -942,7 +942,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                      维修
                       </div>
                     </div>
                   </div>
@@ -1101,7 +1101,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                      维修
                       </div>
                     </div>
                   </div>
@@ -1122,7 +1122,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >门禁系统</span
+                    >消防系统</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -1256,7 +1256,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                      维修
                       </div>
                     </div>
                   </div>
@@ -1277,7 +1277,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >广播系统</span
+                    >生产线</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -1411,7 +1411,7 @@
                           color: #ffffff;
                         "
                       >
-                        保修
+                      维修
                       </div>
                     </div>
                   </div>
@@ -1434,7 +1434,7 @@
               src="../../assets/three/123.png"
               alt=""
             />
-            <span>设备数量统计</span>
+            <span>资产管理</span>
           </div>
         </div>
 
@@ -1448,15 +1448,15 @@
               src="../../assets/three/qushi3.png"
               alt=""
             />
-            <span>历史告警表格</span>
+            <span>告警记录</span>
           </div>
         </div>
 
         <div style="width: 95%; height: 78%; margin: 0 auto">
           <el-table
             :data="tableData"
-            max-height="222"
-            style="width: 100%; dackground: transparent"
+            max-height="200"
+            style="width: 100%; background: transparent"
             :header-cell-style="{ background: '#1E4A75', color: '#F9FAFB' }"
           >
             <el-table-column prop="title" label="告警名称" align="center">
@@ -1481,7 +1481,7 @@
               src="../../assets/three/qushi3.png"
               alt=""
             />
-            <span>告警数量统计</span>
+            <span>风险管理</span>
           </div>
         </div>
 
@@ -1574,7 +1574,7 @@
               src="../../assets/three/qushi3.png"
               alt=""
             />
-            <span>日告警趋势</span>
+            <span>告警趋势分析</span>
           </div>
         </div>
 
@@ -1590,74 +1590,119 @@ export default {
 
   data() {
     return {
-      num: [3, 5, 0, 6],
+      num: [1, 3, 2, 6],
       pieData: [
-        { value: 150, name: "摄像头" },
-        { value: 150, name: "广播设备" },
-        { value: 150, name: "温度传感器" },
+        { value: 9, name: "办公用品" },
+        { value: 15, name: "车辆" },
+        { value: 12, name: "起重设备" },
+        { value: 21, name: "生产工具" },
+        { value: 28, name: "生产线" },
+        { value: 15, name: "其他设备" },
       ],
       tableData: [
         {
-          title: "xxx事件",
-          grade: "1",
-          time: "2021-07-26",
-          seat: "xx栋xx楼",
+          title: "设备故障",
+          grade: "2",
+          time: "2024-05-16",
+          seat: "东莞黄牛埔智能制造基地",
         },
         {
-          title: "xxx事件",
-          grade: "1",
-          time: "2021-07-26",
-          seat: "xx栋xx楼",
+          title: "停电事件",
+          grade: "3",
+          time: "2024-05-15",
+          seat: "东莞黄江镇智能制造基地",
         },
         {
-          title: "xxx事件",
-          grade: "1",
-          time: "2021-07-26",
-          seat: "xx栋xx楼",
+          title: "设备故障",
+          grade: "2",
+          time: "2024-05-11",
+          seat: "深圳总部展示中心",
         },
         {
-          title: "xxx事件",
+          title: "消防演习",
           grade: "1",
-          time: "2021-07-26",
-          seat: "xx栋xx楼",
+          time: "2024-05-07",
+          seat: "东莞黄牛埔智能制造基地",
+        },
+        {
+          title: "设备故障",
+          grade: "2",
+          time: "2024-04-21",
+          seat: "东莞黄牛埔智能制造基地",
+        },
+        {
+          title: "设备故障",
+          grade: "2",
+          time: "2024-04-16",
+          seat: "东莞黄牛埔智能制造基地",
+        },
+        {
+          title: "设备故障",
+          grade: "2",
+          time: "2024-04-02",
+          seat: "东莞黄牛埔智能制造基地",
+        },
+        {
+          title: "设备故障",
+          grade: "2",
+          time: "2024-03-19",
+          seat: "东莞黄江镇智能制造基地",
+        },
+        {
+          title: "设备故障",
+          grade: "2",
+          time: "2024-03-05",
+          seat: "深圳总部展示中心",
+        },
+        {
+          title: "设备故障",
+          grade: "2",
+          time: "2024-02-20",
+          seat: "东莞黄牛埔智能制造基地",
+        },
+        {
+          title: "消防演习",
+          grade: "1",
+          time: "2024-02-06",
+          seat: "东莞黄江镇智能制造基地",
         },
       ],
       healthDegree: [
         {
-          chart: 92,
-          msg1: 60,
-          msg2: 60,
-          msg3: 60,
-          msg4: 60,
+          chart: 97,
+          msg1: 186,
+          msg2: 2,
+          msg3: 5,
+          msg4: 3,
+        },
+        {
+          chart: 100,
+          msg1: 128,
+          msg2: 0,
+          msg3: 0,
+          msg4: 0,
         },
         {
           chart: 92,
-          msg1: 60,
-          msg2: 60,
-          msg3: 60,
-          msg4: 60,
-        },
-        {
-          chart: 92,
-          msg1: 60,
-          msg2: 60,
-          msg3: 60,
-          msg4: 60,
+          msg1: 68,
+          msg2: 1,
+          msg3: 1,
+          msg4: 1,
         },
       ],
     };
   },
   mounted() {
-    this.draw(92, "main");
-    this.draw(92, "main1");
+    this.draw(97, "main");
+    this.draw(100, "main1");
     this.draw(92, "main2");
 
-    this.draw(92, "main3");
-    this.draw(92, "main4");
+    this.draw(97, "main3");
+    this.draw(100, "main4");
     this.draw(92, "main5");
 
-    this.draw(92, "main6");
-    this.draw(92, "main7");
+    this.draw(97, "main6");
+    this.draw(100, "main7");
     this.draw(92, "main8");
     this.funpie();
     this.funline();
@@ -1972,15 +2017,18 @@ export default {
         tooltip: {
           trigger: "item",
         },
+        
         legend: {
+          show: false,
           orient: "vertical",
           left: "right",
           top: "40%",
           textStyle: {
-            color: ["#3F56C8", "#00F4FE", "#D54789"],
+            color: '#fff'
+            // color: ["#3F56C8", "#00F4FE", "#D54789"],
           },
         },
-        color: ["#3F56C8", "#00F4FE", "#D54789"],
+        // color: ["#3F56C8", "#00F4FE", "#D54789"],
         series: [
           {
             name: "",
@@ -2017,7 +2065,7 @@ export default {
 
       option = {
         title: {
-          text: "单位/tce",
+          text: "单位/次",
           left: 16,
           textStyle: {
             fontSize: 16,
@@ -2030,13 +2078,14 @@ export default {
           axisPointer: {
             type: "cross",
             label: {
-              backgroundColor: "#fff",
+              // backgroundColor: "#fff",
             },
           },
         },
-        color: ["#F1FA00", "#0DE5FF"],
+        // color: ["#F1FA00", "#0DE5FF"],
         legend: {
-          data: ["同比", "环比"],
+          data: ['一级告警','二级告警','三级告警','四级告警'],
+          // data: ["同比", "环比"],
           left: 600,
           textStyle: {
             color: "#fff",
@@ -2058,75 +2107,110 @@ export default {
             type: "category",
             boundaryGap: false,
             data: [
-              "06-01",
-              "06-02",
-              "06-03",
-              "06-04",
-              "06-05",
-              "06-06",
-              "06-07",
+              '2024年5月',
+              '2024年4月',
+              '2024年3月',
+              '2024年2月',
+              '2024年1月',
+              '2023年12月',
+              '2023年11月'
             ],
           },
         ],
-        // yAxis: [
-        //   {
-        //     type: "value",
-        //   },
-
-        // ],
         yAxis: {
+          minInterval: 1,
           splitLine: {
             show: false,
           },
         },
         series: [
           {
-            name: "同比",
+            name: "一级告警",
             type: "line",
-            stack: "总量",
-            areaStyle: {
-              opacity: 0.5,
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                {
-                  offset: 0,
-                  color: "#F1FA00",
-                },
-                {
-                  offset: 1,
-                  color: "transparent",
-                },
-              ]),
-            },
-            emphasis: {
-              focus: "series",
-            },
-            data: [0, 3, 5, 8, 9, 15, 7],
+            // stack: "总量",
+            // areaStyle: {
+            //   opacity: 0.5,
+            //   color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            //     {
+            //       offset: 0,
+            //       // color: "#F1FA00",
+            //     },
+            //     {
+            //       offset: 1,
+            //       color: "transparent",
+            //     },
+            //   ]),
+            // },
+            // emphasis: {
+            //   focus: "series",
+            // },
+            data: [1, 0, 0, 1, 0, 1, 0],
           },
           {
-            name: "环比",
+            name: "二级告警",
             type: "line",
-            stack: "总量",
-            label: {
-              show: true,
-              position: "top",
-            },
-            areaStyle: {
-              opacity: 0.8,
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                {
-                  offset: 0,
-                  color: "#0DE5FF",
-                },
-                {
-                  offset: 1,
-                  color: "transparent",
-                },
-              ]),
-            },
-            emphasis: {
-              focus: "series",
-            },
-            data: [6, 7, 2, 8, 0, 6, 15],
+            // stack: "总量",
+            // areaStyle: {
+            //   opacity: 0.5,
+            //   color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            //     {
+            //       offset: 0,
+            //       // color: "#F1FA00",
+            //     },
+            //     {
+            //       offset: 1,
+            //       color: "transparent",
+            //     },
+            //   ]),
+            // },
+            // emphasis: {
+            //   focus: "series",
+            // },
+            data: [2, 3, 2, 1, 2, 1, 2],
+          },
+          {
+            name: "三级告警",
+            type: "line",
+            // stack: "总量",
+            // areaStyle: {
+            //   opacity: 0.5,
+            //   color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            //     {
+            //       offset: 0,
+            //       // color: "#F1FA00",
+            //     },
+            //     {
+            //       offset: 1,
+            //       color: "transparent",
+            //     },
+            //   ]),
+            // },
+            // emphasis: {
+            //   focus: "series",
+            // },
+            data: [1, 0, 0, 0, 2, 0, 1],
+          },
+          {
+            name: "四级告警",
+            type: "line",
+            // stack: "总量",
+            // areaStyle: {
+            //   opacity: 0.5,
+            //   color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            //     {
+            //       offset: 0,
+            //       // color: "#F1FA00",
+            //     },
+            //     {
+            //       offset: 1,
+            //       color: "transparent",
+            //     },
+            //   ]),
+            // },
+            // emphasis: {
+            //   focus: "series",
+            // },
+            data: [0, 0, 0, 0, 1, 0, 1],
           },
         ],
       };

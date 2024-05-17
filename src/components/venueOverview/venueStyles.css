@@ -10,6 +10,13 @@
     float: left;
 }
 
+.venueCBox {
+    float: left;
+    width: calc(100% - 454/19.2*1vw*2);
+    height: 100%;
+    /* height: calc(100% - calc(85/10.8*1vh)); */
+}
+
 .venueLBoxBg {
     background: url(../../assets/venueLBoxBg.png) no-repeat center center;
     background-size: contain;
@@ -46,6 +53,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* overflow-x: auto; */
 }
 
 .venueCdownBox_box {
@@ -178,6 +186,10 @@
     font-weight: 400;
     color: #FFFFFF;
 }
+.venueRBoxTitleRight {
+    margin-left: 20px;
+    flex: 1;
+}
 
 .venueRBoxChangeBox {
     height: calc(100% - calc(105/10.8*1vh));
@@ -256,39 +268,41 @@
 }
 
 .v_boxContentBoxDetailsTitle {
-    width: calc(70/19.2*1vw);
+    /* width: calc(70/19.2*1vw); */
     height:  calc(22/10.8*1vh);
     font-size: calc(14/19.2*1vw);
     font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
     color: #01D6FD;
     line-height: calc(22/19.2*1vw);
+    text-align: left;
     margin-left: calc(9/19.2*1vw);
 }
 
 .v_DetailsOne {
     width: calc(118/19.2*1vw);
-    height:  calc(22/10.8*1vh);
+    /* height:  calc(22/10.8*1vh); */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .v_DetailsOneL {
-    width: 41px;
-    height:  calc(22/10.8*1vh);
+    /* width: 41px; */
+    /* height:  calc(22/10.8*1vh); */
     font-size: calc(12/19.2*1vw);
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #FFFFFF;
-    line-height: 22px;
+    /* line-height: 22px; */
+    margin-left: calc(9/19.2*1vw);
 }
 .v_DetailsOneR {
-    width: 71px;
-    height:  calc(22/10.8*1vh);
+    /* width: 71px; */
+    /* height:  calc(22/10.8*1vh); */
     font-size: calc(14/19.2*1vw);
     font-family: PingFangSC-Semibold, PingFang SC;
     font-weight: 600;
     color: #01D6FD;
-    line-height: calc(22/19.2*1vw);
+    /* line-height: calc(22/19.2*1vw); */
 }

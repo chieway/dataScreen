@@ -115,6 +115,7 @@ html, body, #app {
   display: flex;
   align-items: center;
   border-radius: 15px 15px 0 0;
+  font-size: 12px;
 }
 
 .img_1 {
@@ -149,7 +150,7 @@ html, body, #app {
 .recycle-record-content-item {
   height: 50px;
   display: inline-block;
-  line-height: 50px;
+  /* line-height: 50px; */
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

@@ -4,7 +4,7 @@
       <div class="venueLBoxOne venueLBoxBg">
         <div class="venueLBoxOneTitleBox">
           <span class="venueLBoxOneTitleBoxImg"></span>
-          <span class="venueLBoxOneTitleBoxtitle">主要素平均值日趋势图</span>
+          <span class="venueLBoxOneTitleBoxtitle">市场销售趋势图 | 月度</span>
         </div>
         <div class="venueLBoxOneComBox">
           <venueLBoxOne />
@@ -14,7 +14,7 @@
       <div class="venueLBoxTwo venueLBoxBg">
         <div class="venueLBoxOneTitleBox">
           <span class="venueLBoxOneTitleBoxImg"></span>
-          <span class="venueLBoxOneTitleBoxtitle">水质要素平均日趋势图</span>
+          <span class="venueLBoxOneTitleBoxtitle">设备产销趋势图 | 月度</span>
         </div>
         <div class="venueLBoxOneComBox">
           <venueLBoxTwo />
@@ -24,12 +24,16 @@
       <div class="venueLBoxTh venueLBoxBg">
         <div class="venueLBoxOneTitleBox">
           <span class="venueLBoxOneTitleBoxImg"></span>
-          <span class="venueLBoxOneTitleBoxtitle">告警趋势</span>
+          <span class="venueLBoxOneTitleBoxtitle">售后服务趋势图 | 月度</span>
         </div>
         <div class="venueLBoxOneComBox">
           <venueLBoxTh />
         </div>
       </div>
+    </div>
+
+    <div class="venueCBox">
+      <mapScreen />
     </div>
 
     <div class="venueRBox">
@@ -40,7 +44,7 @@
           "
           @click="venueRBoxButtonFlag = !venueRBoxButtonFlag"
         >
-          <span class="venueRBoxButtonSpan">乡村工况</span>
+          <span class="venueRBoxButtonSpan">产品矩阵</span>
         </div>
         <div
           :class="
@@ -48,7 +52,7 @@
           "
           @click="venueRBoxButtonFlag = !venueRBoxButtonFlag"
         >
-          <span class="venueRBoxButtonSpan">数据总览</span>
+          <span class="venueRBoxButtonSpan">智慧工厂</span>
         </div>
       </div>
       <div style="height: 12px"></div>
@@ -56,7 +60,7 @@
         <div class="venueRBoxTitleLift">
           <!-- <img src="" alt=""> -->
           <i class="el-icon-office-building"></i>
-          &nbsp;&nbsp;<span>村庄</span>
+          &nbsp;&nbsp;<span>产品中心</span>
         </div>
         <div class="venueRBoxTitleRight">
           <el-input
@@ -134,6 +138,7 @@ import venueLBoxOne from "@/components/venueOverview/venueLBoxOne.vue";
 import venueLBoxTwo from "@/components/venueOverview/venueLBoxTwo.vue";
 import venueLBoxTh from "@/components/venueOverview/venueLBoxTh.vue";
 import venueRBoxChangeBoxTable from "@/components/venueOverview/venueRBoxChangeBoxTable.vue";
+import mapScreen from '@/components/venueOverview/mapScreen.vue'
 
 export default {
   name: "venue",
@@ -142,6 +147,7 @@ export default {
     venueLBoxTwo,
     venueLBoxTh,
     venueRBoxChangeBoxTable,
+    mapScreen,
   },
   data() {
     return {
@@ -153,9 +159,10 @@ export default {
           state: "一般",
           long: "3",
           flag: {
-            name: "寿山村",
-            detailsOne: "明渠流量计",
-            detailsTwo: "出水量过低异常",
+            name:'有12%的设备即将启动例行巡检，注意人员调配。',
+            // name: "寿山村",
+            // detailsOne: "明渠流量计",
+            // detailsTwo: "出水量过低异常",
           },
         },
         {
@@ -163,8 +170,9 @@ export default {
           state: "严重",
           long: "2",
           flag: {
-            name: "寿山村",
-            detailsOne: "药剂底液位异常",
+            name: '自动化设备',
+            // name: "寿山村",
+            // detailsOne: "药剂底液位异常",
           },
         },
         {
@@ -172,226 +180,142 @@ export default {
           state: "重要",
           long: "3",
           flag: {
-            name: "寿山村",
-            detailsOne: "明渠流量计",
-            detailsTwo: "出水量过低异常",
+            name: '自动化设备',
+            // name: "寿山村",
+            // detailsOne: "明渠流量计",
+            // detailsTwo: "出水量过低异常",
           },
         },
       ],
       venueRBoxChangeBoxData: [
         {
-          name: "村庄",
+          name: "雷神系列 | 切割",
           state: "一般",
           long: "3",
           flag: [
             {
-              name: "明渠流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
+              name: "金属切割Ⅰ",
+              detailsOne: "激光类型",
+              detailsOnedata: "光纤",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "3000W",
             },
             {
-              name: "管道流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
+              name: "塑料切割 Ⅱ",
+              detailsOne: "激光类型",
+              detailsOnedata: "CO₂",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "100W",
             },
              {
-              name: "用电检测",
-              detailsOne: "电压",
-              detailsOnedata: "220V",
-              detailsTwo: "电流",
-              detailsTwodata: "5A",
+              name: "玻璃切割 Ⅲ",
+              detailsOne: "激光类型",
+              detailsOnedata: "CO₂",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "600W",
             },
             {
-              name: "网络摄像头",
-              detailsOne: "状态 ",
-              detailsOnedata: "在线",
-              detailsTwo: "",
-              detailsTwodata: "",
+              name: "炭纤维切割 Ⅳ",
+              detailsOne: "激光类型 ",
+              detailsOnedata: "飞秒",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "500W",
             },
           ],
         },
         {
-          name: "村庄",
+          name: "火神系列 | 焊接",
           state: "一般",
           long: "3",
           flag: [
             {
-              name: "明渠流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
+              name: "金属焊接",
+              detailsOne: "激光类型",
+              detailsOnedata: "光纤",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "3000W",
             },
             {
-              name: "管道流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
+              name: "塑料焊接",
+              detailsOne: "激光类型",
+              detailsOnedata: "CO₂",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "100W",
             },
              {
-              name: "用电检测",
-              detailsOne: "电压",
-              detailsOnedata: "220V",
-              detailsTwo: "电流",
-              detailsTwodata: "5A",
+              name: "玻璃焊接",
+              detailsOne: "激光类型",
+              detailsOnedata: "CO₂",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "600W",
             },
             {
-              name: "网络摄像头",
-              detailsOne: "状态 ",
-              detailsOnedata: "在线",
-              detailsTwo: "",
-              detailsTwodata: "",
+              name: "炭纤维焊接",
+              detailsOne: "激光类型 ",
+              detailsOnedata: "飞秒",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "500W",
             },
           ],
         },
         {
-          name: "村庄",
+          name: "电神系列 | 打标",
           state: "一般",
           long: "3",
           flag: [
             {
-              name: "明渠流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
+              name: "金属打标",
+              detailsOne: "激光类型",
+              detailsOnedata: "光纤",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "1000W",
             },
             {
-              name: "管道流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
+              name: "塑料打标",
+              detailsOne: "激光类型",
+              detailsOnedata: "CO₂",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "100W",
             },
              {
-              name: "用电检测",
-              detailsOne: "电压",
-              detailsOnedata: "220V",
-              detailsTwo: "电流",
-              detailsTwodata: "5A",
+              name: "玻璃打标",
+              detailsOne: "激光类型",
+              detailsOnedata: "CO₂",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "300W",
             },
             {
-              name: "网络摄像头",
-              detailsOne: "状态 ",
-              detailsOnedata: "在线",
-              detailsTwo: "",
-              detailsTwodata: "",
+              name: "炭纤维打标",
+              detailsOne: "激光类型 ",
+              detailsOnedata: "飞秒",
+              detailsTwo: "平均功耗",
+              detailsTwodata: "300W",
             },
           ],
         },
         {
-          name: "村庄",
+          name: "雅典娜系列 | 自动化",
           state: "一般",
           long: "3",
           flag: [
             {
-              name: "明渠流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
+              name: "自动上料线",
+              detailsOne: "机械自动化",
             },
             {
-              name: "管道流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
-            },
-             {
-              name: "用电检测",
-              detailsOne: "电压",
-              detailsOnedata: "220V",
-              detailsTwo: "电流",
-              detailsTwodata: "5A",
+              name: '视觉识别归整',
+              detailsOne: "视觉自动化",
             },
             {
-              name: "网络摄像头",
-              detailsOne: "状态 ",
-              detailsOnedata: "在线",
-              detailsTwo: "",
-              detailsTwodata: "",
+              name: '自动包装覆膜',
+              detailsOne: "机械自动化",
+            },
+            {
+              name: '残次品筛选',
+              detailsOne: "视觉自动化",
             },
           ],
         },
-        {
-          name: "村庄",
-          state: "一般",
-          long: "3",
-          flag: [
-            {
-              name: "明渠流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
-            },
-            {
-              name: "管道流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
-            },
-             {
-              name: "用电检测",
-              detailsOne: "电压",
-              detailsOnedata: "220V",
-              detailsTwo: "电流",
-              detailsTwodata: "5A",
-            },
-            {
-              name: "网络摄像头",
-              detailsOne: "状态 ",
-              detailsOnedata: "在线",
-              detailsTwo: "",
-              detailsTwodata: "",
-            },
-          ],
-        },
-        {
-          name: "村庄",
-          state: "一般",
-          long: "3",
-          flag: [
-            {
-              name: "明渠流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
-            },
-            {
-              name: "管道流量计",
-              detailsOne: "流速",
-              detailsOnedata: "501.4m3/h",
-              detailsTwo: "总流量",
-              detailsTwodata: "20501.4m3",
-            },
-             {
-              name: "用电检测",
-              detailsOne: "电压",
-              detailsOnedata: "220V",
-              detailsTwo: "电流",
-              detailsTwodata: "5A",
-            },
-            {
-              name: "网络摄像头",
-              detailsOne: "状态 ",
-              detailsOnedata: "在线",
-              detailsTwo: "",
-              detailsTwodata: "",
-            },
-          ],
-        },
-
-       
-
       ],
     };
   },
