@@ -33,7 +33,8 @@
     </div>
 
     <div class="venueCBox">
-      <mapScreen />
+      <!-- <mapScreen /> -->
+      <test />
     </div>
 
     <div class="venueRBox">
@@ -139,6 +140,7 @@ import venueLBoxTwo from "@/components/venueOverview/venueLBoxTwo.vue";
 import venueLBoxTh from "@/components/venueOverview/venueLBoxTh.vue";
 import venueRBoxChangeBoxTable from "@/components/venueOverview/venueRBoxChangeBoxTable.vue";
 import mapScreen from '@/components/venueOverview/mapScreen.vue'
+import test from '@/components/venueOverview/test'
 
 export default {
   name: "venue",
@@ -148,6 +150,7 @@ export default {
     venueLBoxTh,
     venueRBoxChangeBoxTable,
     mapScreen,
+    test
   },
   data() {
     return {

@@ -27,9 +27,40 @@ export default {
   methods: {
     initMap() {
       this.map = new AMap.Map('map', {
-        zoom: 10,
+        resizeEnable: true,
+        expandZoomRange: true,
+        gestureHandling: 'greedy',
+
+        // zoom: 10,
+        defaultCursor: 'pointer',
+        mapStyle: "amap://styles/f6e3818366ba5268d50ea3f2296eb3eb",
+        showLabel: true,
         center: [116.397428, 39.90923] // 初始化地图中心点
+
       });
+      this.typhoonLayer = new AMap.OverlayGroup(); //覆盖物集合创建
+      this.typhoonLayer.setMap(this.map)
+      this.map.on("complete", () => {
+        if(window.screen.width>=1600&&window.screen.height>900){
+          this.map.setZoom(8)
+          this.map.setCenter([119.846375,29.10946])
+        }else{
+          this.map.setZoom(7.5)
+          this.map.setCenter([119.759863,29.3437])
+        }
+
+                // setTimeout(()=>{
+                //   $(".leftOne").css({ "opacity": "1", "top": "20px", "left": "20px"});
+                //   $(".leftTwo").css({ "opacity": "1", "top": "35%", "left": "20px"});
+                //   $(".leftThree").css({ "opacity": "1", "bottom": "20px", "left": "20px"});
+                // },500)
+            });
+            // AMap.event.addListener(that.map, 'click', getLnglat); //点击事件
+            // function getLnglat(e) {
+            // var x = e.lnglat.getLng();
+            // var y = e.lnglat.getLat();
+            // console.log(x,y);
+            // }
     },
 
     initAMap() {
