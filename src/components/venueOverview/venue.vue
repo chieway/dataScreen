@@ -35,6 +35,25 @@
     <div class="venueCBox">
       <!-- <mapScreen /> -->
       <test />
+      <div class="venueCdownBox">
+        <div
+          v-for="(item, index) in venueCdownBoxData"
+          :key="index"
+          :class="index != 1 ? 'venueCdownBox_box' : 'venueCdownBox_boxTwo'"
+        >
+          <span
+            class="venueCdownBox_boxSpan ybox"
+            :style="{ backgroundColor: item.color }"
+            >{{ item.state }}</span
+          >
+          <span
+            class="venueCdownBox_boxSpan"
+            v-for="(i, em) in item.flag"
+            :key="em"
+            >{{ i }}</span
+          >
+        </div>
+      </div>
     </div>
 
     <div class="venueRBox">
@@ -110,26 +129,6 @@
           <venueRBoxChangeBoxTable/>
         </div>
        
-      </div>
-    </div>
-
-    <div class="venueCdownBox">
-      <div
-        v-for="(item, index) in venueCdownBoxData"
-        :key="index"
-        :class="index != 1 ? 'venueCdownBox_box' : 'venueCdownBox_boxTwo'"
-      >
-        <span
-          class="venueCdownBox_boxSpan ybox"
-          :style="{ backgroundColor: item.color }"
-          >{{ item.state }}</span
-        >
-        <span
-          class="venueCdownBox_boxSpan"
-          v-for="(i, em) in item.flag"
-          :key="em"
-          >{{ i }}</span
-        >
       </div>
     </div>
   </div>

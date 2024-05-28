@@ -9,6 +9,7 @@ export default {
       markers: [], //点集合
       map: {}, //地图对象
       infoWindow: null,
+      infoWindowVisible: false,
     };
   },
   methods: {
@@ -17,14 +18,19 @@ export default {
       //创建地图
       this.map = new AMap.Map("container", {
         // cursor: "default",
-        mapStyle: 'amap://styles/twilight',
+        mapStyle: 'amap://styles/darkblue',
+        // mapStyle: 'amap://styles/db9efe6a1745ac24b7269b862f359536',
+        // mapStyle: 'amap://styles/twilight',
         resizeEnable: true, //是否监控地图容器尺寸变化，默认值为false
         expandZoomRange: true, //是否支持可以扩展最大缩放级别,和zooms属性配合使用设置为true的时候，zooms的最大级别在PC上可以扩大到20级，移动端还是高清19/非高清20
         // gestureHandling: "greedy",//谷歌里面的// hybrid包含卫星和地名
         zooms: [4, 20],
         zoom: 11,
+        // center: [113.280637, 23.125178],
+        // center: [],
         defaultCursor: "pointer", //变成小手 地图默认鼠标样式。参数defaultCursor应符合CSS的cursor属性规范
         showLabel: true, //显示地图文字标记
+        // features: ['bg'],
         layers: [
           new AMap.TileLayer.Satellite() //默认卫星
           // new AMap.TileLayer.RoadNet(), //地图路网
@@ -81,7 +87,8 @@ export default {
           /***清空监听的项目名称id和adcode***/
           adcodes = [];
           adcodes = [
-            440000 //浙江
+            100000
+            // 440000 //浙江
           ];
           // this.initCity(); //获取城市区域
           districtExplorer.loadMultiAreaNodes(adcodes, (error, areaNodes) => {
@@ -131,9 +138,10 @@ export default {
         var adcodes = [];
         //根据角色来绘制不同的区域
         adcodes = [
-          440000, //广东
-          820000, // 澳门
-          810000, // 香港
+          100000,
+          // 440000, //广东
+          // 820000, // 澳门
+          // 810000, // 香港
         ];
         // this.initCity();
         //绘制多区域
@@ -157,33 +165,6 @@ export default {
       proviceList.forEach(item => {
         this.areaBg(this.map,item)
       })
-
-      //AMap.DistrictSearch 行政区查询服务，提供行政区相关信息    这里实际上就是挖一个只有浙江省的空白覆盖区域，外部不让点击
-      // new AMap.DistrictSearch({
-      //   extensions: "all",
-      //   subdistrict: 0
-      // }).search("浙江省", (status, result) => {
-      //   // 外多边形坐标数组和内多边形坐标数组
-      //   var outer = [
-      //     new AMap.LngLat(-360, 90, true),
-      //     new AMap.LngLat(-360, -90, true),
-      //     new AMap.LngLat(360, -90, true),
-      //     new AMap.LngLat(360, 90, true)
-      //   ];
-      //   var holes = result.districtList[0].boundaries;
-
-      //   var pathArray = [outer];
-      //   pathArray.push.apply(pathArray, holes);
-      //   var polygon = new AMap.Polygon({
-      //     pathL: pathArray,
-      //     strokeColor: "#0d4f50",
-      //     strokeWeight: 1,
-      //     fillColor: "#0d4f50",
-      //     fillOpacity: 0.5
-      //   });
-      //   polygon.setPath(pathArray);
-      //   this.map.add(polygon); //添加多边形 外部区域不让点了
-      // });
     },
 
     areaBg(map,cityName) {
@@ -198,10 +179,10 @@ export default {
             district.setLevel('district');
             // 行政区查询
             district.search(cityName, function (status, result) {
-              console.log('resultttt',result)
+              // console.log('resultttt',result)
                 // 获取边界信息
                 let bounds = result.districtList[0].boundaries;
-                console.log('bounds',bounds)
+                // console.log('bounds',bounds)
                 let polygons = [];
                 if (bounds) {
                     for (let i = 0, l = bounds.length; i < l; i++) {
@@ -221,7 +202,8 @@ export default {
         });
     },
 
-    renderInfoWindow(name) {
+    renderInfoWindow(name,center) {
+      console.log('zyw',center)
       const data = [
         {city: '广州市',one: 67691,two: 16923,three: 14215,four: 15569,five: 20984,six: 67691},
         {city: '佛山市',one: 79421,two: 19855,three: 16678,four: 18267,five: 24621,six: 79421},
@@ -235,10 +217,11 @@ export default {
         {city: '香港',one: 128,'two': 32,'three': 27,'four': 29,'five': 40,'six': 128},
         {city: '澳门',one: 69,'two': 17,'three': 14,'four': 16,'five': 21,'six': 69},
         {city: '深汕特别合作区',one: 8563,'two': 2141,'three': 1798,'four': 1969,'five': 2655,'six': 8563},
+        {city: '广东省',one: 501386,two: 125347,three: 105291,four: 115319,five: 155430,six: 501386},
         {city: 'all',one: 501583,'two': 125396,'three': 105332,'four': 115364,'five': 155491,'six': 501583},
       ]
 
-      let filterData = data.filter(item => item.city === name)
+      let filterData = data.filter(item => name.includes(item.city))
       let renderData = {}
       if(filterData.length) {
         renderData = filterData[0]
@@ -277,9 +260,14 @@ export default {
         content: renderContent,
         // template: '',
         anchor: "top-left",
-        // visible: this.infoWindowVisible,
+        position: center,
+        autoMove: true,
+        retainWhenClose: true,
+        // offset: new AMap.Pixel(10, -33),
+        visible: this.infoWindowVisible,
       });
-      this.infoWindow.open(this.map,this.map.getCenter())
+      // this.infoWindow.open(this.map,this.map.getCenter())
+      this.infoWindow.open(this.map,center)
     },
 
     /**各市级地图***这里要想渲染点标记就需要后台接口给你全部数据来循环里面的详细内容或者自己点出来*****/
@@ -312,20 +300,31 @@ export default {
       this.removeArea(); //清空文字点标记
       if (AreaNode._data.geoData.lngLatSubList) {
         AreaNode._data.geoData.lngLatSubList.forEach(item => {
-          this.marker = new AMap.Marker({
-            // content: `<div class="markerCss"></div>`,
-            // content: `<div class ="markerCss">${item.properties.name} </div>`,
-            position: [item.properties.center[0], item.properties.center[1]],
-            offset: new AMap.Pixel(0, 0),
+          // console.log('item',item)
+          const {adcode,level,center} = item.properties
+          if(level === 'province' && adcode !== 440000 && adcode !== 810000 && adcode !== 820000) {
+            return
+          }
+          console.log('center',center,adcode)
+          this.marker = new AMap.CircleMarker({
+            center: [center[0], center[1]],
             radius: 10,
+            strokeColor: "white", //轮廓线颜色
+            strokeWeight: 2, //轮廓线宽度
+            strokeOpacity: 0.5, //轮廓线透明度
+            fillColor: "rgba(0,0,255,1)", //多边形填充颜色
+            fillOpacity: 0.5, //多边形填充透明度
+            zIndex: 10, //多边形覆盖物的叠加顺序
+            cursor: "pointer", //鼠标悬停时的鼠标样式
             extData: {
               name: item.properties.name,
+              center
             }
           });
           this.marker.on('click', (e) => {
             const {name} = e.target.w.extData
-            console.log('eeeeeeeeeeeeeeeeeeeeeeeeee',name)
-            this.renderInfoWindow(name)
+            // console.log('eeeeeeeeeeeeeeeeeeeeeeeeee',name)
+            this.renderInfoWindow(name,center)
             // infoWindow.open(map, map.getCenter());
             // infoWindow.open(map, marker.getPosition());
           });
@@ -341,6 +340,11 @@ export default {
     removeArea() {
       this.map.remove(this.markers);
       this.markers = [];
+      
+      this.infoWindowVisible = false
+      if(this.infoWindow) {
+        this.infoWindow.close()
+      }
     },
   },
   mounted() {
@@ -355,7 +359,8 @@ export default {
 #container {
   padding:0px;
   margin: 0px;
-  height: calc(100% - 100px);
+  /* height: calc(100% - 100px); */
+  height: calc(100% - 66/10.8*1vh);
   width: 100%;
 }
 .markerCss {

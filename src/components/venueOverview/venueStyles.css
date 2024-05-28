@@ -14,6 +14,7 @@
     float: left;
     width: calc(100% - 454/19.2*1vw*2);
     height: 100%;
+    position: relative;
     /* height: calc(100% - calc(85/10.8*1vh)); */
 }
 
@@ -48,7 +49,7 @@
     transform: translate(-50%);
     width: calc(949/19.2*1vw);
     height: calc(52/10.8*1vh);
-    padding: 9px calc(66/19.2*1vw);
+    /* padding: 9px calc(66/19.2*1vw); */
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -57,19 +58,21 @@
 }
 
 .venueCdownBox_box {
-    width: calc(289/19.2*1vw);
+    /* width: calc(289/19.2*1vw); */
+    flex: 1;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 
 }
 
 .venueCdownBox_boxTwo {
-    width: calc(200/19.2*1vw);
+    /* width: calc(200/19.2*1vw); */
+    flex: 1;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 
