@@ -153,6 +153,7 @@ export default {
   },
   data() {
     return {
+      timer: null,
       input: "",
       venueRBoxButtonFlag: 1,
       venueCdownBoxData: [
@@ -321,9 +322,18 @@ export default {
       ],
     };
   },
-  mounted() {},
+  mounted() {
+    this.timer = setInterval(() => {
+      this.venueRBoxButtonFlag = this.venueRBoxButtonFlag === 0 ? 1 : 0
+    },5000)
+  },
 
   methods: {},
+  beforeDestroy() {
+    if(this.timer) {
+      clearInterval(this.timer)
+    }
+  },
 };
 </script>
 <style src='./venueStyles.css' scoped>

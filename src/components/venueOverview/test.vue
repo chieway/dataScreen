@@ -32,7 +32,7 @@ export default {
         showLabel: true, //显示地图文字标记
         // features: ['bg'],
         layers: [
-          new AMap.TileLayer.Satellite() //默认卫星
+          // new AMap.TileLayer.Satellite() //默认卫星
           // new AMap.TileLayer.RoadNet(), //地图路网
           // new AMap.Buildings({// 楼块图层
           //   zooms: [16, 18],
@@ -362,6 +362,8 @@ export default {
   /* height: calc(100% - 100px); */
   height: calc(100% - 66/10.8*1vh);
   width: 100%;
+  /* background: url('../../assets//mapBg.png') no-repeat center; */
+  /* background-size: cover; */
 }
 .markerCss {
   font-size: 12px;
