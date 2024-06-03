@@ -114,12 +114,14 @@ export default {
               cursor: "default",
               bubble: true,
               // strokeColor: "#00a4ce", //线颜色
-              strokeColor: "#03d7a1",
+              // strokeColor: "#03d7a1",
+              strokeColor: 'blue',
               strokeOpacity: 1, //线透明度
               strokeWeight: 1.5, //线宽
               // fillColor: "#09152a", //填充色
-              fillColor: "#072942",
-              fillOpacity: 0.1 //填充透明度
+              // fillColor: "#072942",
+              fillColor: 'blue',
+              fillOpacity: 0.5 //填充透明度
             };
           });
           //绘制父区域
@@ -127,11 +129,15 @@ export default {
             cursor: "default",
             bubble: true,
             // strokeColor: "#00a4ce", //线颜色
-            strokeColor: "#03d7a1",
+            // strokeColor: "#03d7a1",
+            // strokeColor: 'blue',
+            strokeColor: 'rgb(43,115,214)',
             strokeOpacity: 1, //线透明度
             strokeWeight: 1.5, //线宽
             // fillColor: "#09152a", //填充色
-            fillColor: "#072942",
+            // fillColor: "#072942",
+            fillColor: 'rgb(2,22,96)',
+            // fillColor: 'blue',
             fillOpacity: 0.5 //填充透明度
           });
         }
@@ -192,8 +198,12 @@ export default {
                             strokeWeight: 1,
                             path: bounds[i],
                             fillOpacity: 0.2,
-                            fillColor: 'rgba(71,228,194,0.44)',
-                            strokeColor: 'rgba(83,204,79,0.65)'
+                            fillColor: 'rgb( 0,152,253)',
+                            strokeColor: 'rgb(1,144,218)',
+                            // fillColor: 'blue',
+                            // strokeColor: 'blue',
+                            // fillColor: 'rgba(71,228,194,0.44)',
+                            // strokeColor: 'rgba(83,204,79,0.65)'
                         });
                         polygons.push(polygon);
                     }
