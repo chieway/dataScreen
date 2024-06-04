@@ -10,6 +10,9 @@ export default {
       map: {}, //地图对象
       infoWindow: null,
       infoWindowVisible: false,
+      infoContent: [],
+      intervalId: null,
+      currentIndex: 0
     };
   },
   methods: {
@@ -59,6 +62,7 @@ export default {
         //内部区域feature被点击
         districtExplorer.on("featureClick", (e, feature) => {
           console.log("feature", feature);
+          this.currentIndex = 0;
           adcodes = []; //清空区码数组
           adcodes = [feature.properties.adcode]; //绘制地图区域
           // this.initCity(feature); //调用city城市地图
@@ -75,6 +79,17 @@ export default {
             }
             //更新地图视野
             this.map.setFitView(districtExplorer.getAllFeaturePolygons());
+            if(feature.properties.adcode === 440000) {
+              this.infoContent = ['广州市','深圳市','东莞市','肇庆市','佛山市','惠州市','珠海市','中山市','江门市']
+              this.intervalId = setInterval(() => {
+                this.currentIndex = (this.currentIndex + 1) % this.infoContent.length;
+                var content = this.infoContent[this.currentIndex];
+                if(this.infoWindow) {
+                  this.infoWindow.close()
+                }
+                this.renderInfoWindow(content,null)
+              }, 5000)
+            }
           });
         });
         //外部区域被点击
@@ -162,6 +177,17 @@ export default {
             renderAreaNode(areaNodes[i]);
             this.initTown(areaNodes[i]);
           }
+          if(adcodes.join('') === '100000') {
+            this.infoContent = ['广东省','香港特别行政区','澳门特别行政区']
+            this.intervalId = setInterval(() => {
+              this.currentIndex = (this.currentIndex + 1) % this.infoContent.length;
+              var content = this.infoContent[this.currentIndex];
+              if(this.infoWindow) {
+                this.infoWindow.close()
+              }
+              this.renderInfoWindow(content,null)
+            }, 5000)
+          }
           //更新地图视野 下钻效果
           this.map.setFitView(districtExplorer.getAllFeaturePolygons());
         });
@@ -175,6 +201,21 @@ export default {
 
     areaBg(map,cityName) {
       AMap.service('AMap.DistrictSearch', function () {
+        if(this.infoWindow) {
+          this.infoWindow.close()
+          clearInterval(this.intervalId)
+          if(cityName === '广东省') {
+            this.infoContent = ['广州市','深圳市','东莞市','肇庆市','佛山市','惠州市','珠海市','中山市','江门市']
+            this.intervalId = setInterval(() => {
+              this.currentIndex = (this.currentIndex + 1) % this.infoContent.length;
+              var content = this.infoContent[this.currentIndex];
+              if(this.infoWindow) {
+                this.infoWindow.close()
+              }
+              this.renderInfoWindow(content,null)
+            }, 5000)
+          }
+        }
             let opts = {
                 subdistrict: 1,   // 返回下一级行政区
                 extensions: 'all',  // 返回行政区边界坐标组等具体信息
@@ -200,8 +241,6 @@ export default {
                             fillOpacity: 0.2,
                             fillColor: 'rgb( 0,152,253)',
                             strokeColor: 'rgb(1,144,218)',
-                            // fillColor: 'blue',
-                            // strokeColor: 'blue',
                             // fillColor: 'rgba(71,228,194,0.44)',
                             // strokeColor: 'rgba(83,204,79,0.65)'
                         });
@@ -213,7 +252,6 @@ export default {
     },
 
     renderInfoWindow(name,center) {
-      console.log('zyw',center)
       const data = [
         {city: '广州市',one: 67691,two: 16923,three: 14215,four: 15569,five: 20984,six: 67691},
         {city: '佛山市',one: 79421,two: 19855,three: 16678,four: 18267,five: 24621,six: 79421},
@@ -277,7 +315,7 @@ export default {
         visible: this.infoWindowVisible,
       });
       // this.infoWindow.open(this.map,this.map.getCenter())
-      this.infoWindow.open(this.map,center)
+      this.infoWindow.open(this.map,center || this.map.getCenter())
     },
 
     /**各市级地图***这里要想渲染点标记就需要后台接口给你全部数据来循环里面的详细内容或者自己点出来*****/
@@ -310,12 +348,10 @@ export default {
       this.removeArea(); //清空文字点标记
       if (AreaNode._data.geoData.lngLatSubList) {
         AreaNode._data.geoData.lngLatSubList.forEach(item => {
-          // console.log('item',item)
           const {adcode,level,center} = item.properties
           if(level === 'province' && adcode !== 440000 && adcode !== 810000 && adcode !== 820000) {
             return
           }
-          console.log('center',center,adcode)
           this.marker = new AMap.CircleMarker({
             center: [center[0], center[1]],
             radius: 10,
@@ -333,7 +369,6 @@ export default {
           });
           this.marker.on('click', (e) => {
             const {name} = e.target.w.extData
-            // console.log('eeeeeeeeeeeeeeeeeeeeeeeeee',name)
             this.renderInfoWindow(name,center)
             // infoWindow.open(map, map.getCenter());
             // infoWindow.open(map, marker.getPosition());
@@ -362,7 +397,9 @@ export default {
       this.initMap();
     }, 2000);
   },
-  beforeDestroy() {}
+  beforeDestroy() {
+    clearInterval(this.intervalId)
+  }
 };
 </script>
 <style>

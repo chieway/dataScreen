@@ -35,25 +35,42 @@
     <div class="venueCBox">
       <!-- <mapScreen /> -->
       <test />
-      <div class="venueCdownBox">
-        <div
-          v-for="(item, index) in venueCdownBoxData"
-          :key="index"
-          :class="index != 1 ? 'venueCdownBox_box' : 'venueCdownBox_boxTwo'"
-        >
+      <!-- <div class="venueCdownBox"> -->
+        <!-- <vueSeamlessScroll  :classOption="classOption" style="width: 300%;display: flex">
+          <div v-for="(item,index) in venueCdownBoxData" :key="index" class="item">
           <span
             class="venueCdownBox_boxSpan ybox"
             :style="{ backgroundColor: item.color }"
-            >{{ item.state }}</span
           >
-          <span
-            class="venueCdownBox_boxSpan"
-            v-for="(i, em) in item.flag"
-            :key="em"
-            >{{ i }}</span
-          >
+            {{ item.state }}
+          </span>
+          <span style="color: #fff;margin-left: 10px;">{{ item.flag }}</span>
         </div>
-      </div>
+        </vueSeamlessScroll> -->
+        <!-- <div v-for="(item,index) in venueCdownBoxData" :key="index" class="item">
+          <span
+            class="venueCdownBox_boxSpan ybox"
+            :style="{ backgroundColor: item.color }"
+          >
+            {{ item.state }}
+          </span>
+          <span class="desc" style="color: #fff;margin-left: 10px;">{{ item.flag }}</span>
+        </div> -->
+      <!-- </div> -->
+      <vueSeamlessScroll :data="venueCdownBoxData" :classOption="classOption" class="wrap">
+        <ul class="ul-item">
+          <li class="li-item" v-for="(item, index) in venueCdownBoxData" :key="index">
+            <span
+            class="venueCdownBox_boxSpan ybox"
+            :style="{ backgroundColor: item.color }"
+          >
+            {{ item.state }}
+          </span>
+          <span class="desc" style="color: #fff;margin-left: 10px;">{{ item.flag }}</span>
+            <!-- {{ item.state }} -->
+          </li>
+        </ul>
+      </vueSeamlessScroll>
     </div>
 
     <div class="venueRBox">
@@ -140,6 +157,7 @@ import venueLBoxTh from "@/components/venueOverview/venueLBoxTh.vue";
 import venueRBoxChangeBoxTable from "@/components/venueOverview/venueRBoxChangeBoxTable.vue";
 import mapScreen from '@/components/venueOverview/mapScreen.vue'
 import test from '@/components/venueOverview/test'
+import vueSeamlessScroll from 'vue-seamless-scroll'
 
 export default {
   name: "venue",
@@ -149,7 +167,8 @@ export default {
     venueLBoxTh,
     venueRBoxChangeBoxTable,
     mapScreen,
-    test
+    test,
+    vueSeamlessScroll
   },
   data() {
     return {
@@ -161,33 +180,19 @@ export default {
           color: "rgba(26, 147, 234, 1)",
           state: "一般",
           long: "3",
-          flag: {
-            name:'有12%的设备即将启动例行巡检，注意人员调配。',
-            // name: "寿山村",
-            // detailsOne: "明渠流量计",
-            // detailsTwo: "出水量过低异常",
-          },
+          flag: "有12%的设备即将启动例行巡检，注意人员调配。"
         },
         {
           color: "rgba(234, 26, 26, 1)",
           state: "严重",
           long: "2",
-          flag: {
-            name: '自动化设备',
-            // name: "寿山村",
-            // detailsOne: "药剂底液位异常",
-          },
+          flag: "自动化设备"
         },
         {
           color: "rgba(248, 161, 0, 1)",
           state: "重要",
           long: "3",
-          flag: {
-            name: '自动化设备',
-            // name: "寿山村",
-            // detailsOne: "明渠流量计",
-            // detailsTwo: "出水量过低异常",
-          },
+          flag: "自动化设备"
         },
       ],
       venueRBoxChangeBoxData: [
@@ -320,6 +325,11 @@ export default {
           ],
         },
       ],
+      classOption: {
+        limitMoveNum: 2,
+        direction: 3,
+        // singleWidth: 100,
+      }
     };
   },
   mounted() {
@@ -337,4 +347,38 @@ export default {
 };
 </script>
 <style src='./venueStyles.css' scoped>
+</style>
+<style scoped>
+.wrap {
+  position: absolute;
+  left: 50%;
+  bottom: calc(14/10.8*1vh);
+  transform: translate(-50%);
+  width: calc(949/19.2*1vw);
+  /* width: 200px * 3; */
+  /* height: 120px; */
+  margin: 0 auto;
+  overflow: hidden;
+  height: calc(45/10.8*1vh);
+  padding: 5px 16px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+.ul-item {
+  display: flex;
+}
+.li-item {
+  /* width: 200px; */
+  min-width: calc(949/19.2/3*1vw);
+  /* height: 120px; */
+  margin-right: 50px;
+  /* line-height: 120px; */
+  /* background-color: #999; */
+  color: #fff;
+  text-align: center;
+  /* font-size: 30px; */
+}
 </style>

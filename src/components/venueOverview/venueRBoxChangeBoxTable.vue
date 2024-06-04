@@ -38,131 +38,133 @@
               <div style=" float: left; width: 20%; text-align: left">累计运行小时</div>
             </div>
             <div class="recycle-record-content">
-              <div
-                class="recycle-record-content-line"
-                style="
-                  height: calc(45 / 10.8 * 1vh);
-                  border-bottom: 1px solid #0081ff;
-                "
-                v-for="(line, i) in recycleRecords"
-                :key="i"
-              >
+              <vueSeamlessScroll :data="recycleRecords" class="warp">
                 <div
-                  class="recycle-record-content-item"
-                  :title="line.name"
+                  class="recycle-record-content-line"
                   style="
-                    width: 25%;
-                    float: left;
-                    text-align: left;
-                    position: relative;
-                    height: calc(35 / 10.8 * 1vh);
+                    height: calc(45 / 10.8 * 1vh);
+                    border-bottom: 1px solid #0081ff;
                   "
+                  v-for="(line, i) in recycleRecords"
+                  :key="i"
                 >
                   <div
-                    class="lineStateClassD"
-                    style="background-color: rgba(224, 32, 32, 0)"
+                    class="recycle-record-content-item"
+                    :title="line.name"
+                    style="
+                      width: 25%;
+                      float: left;
+                      text-align: left;
+                      position: relative;
+                      height: calc(35 / 10.8 * 1vh);
+                    "
                   >
-                    {{ line.name }}
+                    <div
+                      class="lineStateClassD"
+                      style="background-color: rgba(224, 32, 32, 0)"
+                    >
+                      {{ line.name }}
+                    </div>
                   </div>
-                </div>
 
-                <div
-                  class="recycle-record-content-item"
-                  :title="line.channelFlowmeter"
-                  style="
-                    width: 15%;
-                    float: left;
-                    text-align: left;
-                    position: relative;
-                    height: calc(35 / 10.8 * 1vh);
-                  "
-                >
                   <div
-                    class="lineStateClassD"
-                    :style="{  color: line.channelFlowmeter == '异常' ? 'red' : '', }"
+                    class="recycle-record-content-item"
+                    :title="line.channelFlowmeter"
+                    style="
+                      width: 15%;
+                      float: left;
+                      text-align: left;
+                      position: relative;
+                      height: calc(35 / 10.8 * 1vh);
+                    "
                   >
-                    {{ line.channelFlowmeter }}
+                    <div
+                      class="lineStateClassD"
+                      :style="{  color: line.channelFlowmeter == '异常' ? 'red' : '', }"
+                    >
+                      {{ line.channelFlowmeter }}
+                    </div>
                   </div>
-                </div>
 
-                <div
-                  class="recycle-record-content-item"
-                  :title="line.pipelineFlowmeter"
-                  style="
-                    width: 15%;
-                    float: left;
-                    text-align: left;
-                    position: relative;
-                    height: calc(35 / 10.8 * 1vh);
-                  "
-                >
                   <div
-                    class="lineStateClassD"
-                    :style="{ color: line.pipelineFlowmeter == '异常' ? 'red' : ''}"
+                    class="recycle-record-content-item"
+                    :title="line.pipelineFlowmeter"
+                    style="
+                      width: 15%;
+                      float: left;
+                      text-align: left;
+                      position: relative;
+                      height: calc(35 / 10.8 * 1vh);
+                    "
                   >
-                    {{ line.pipelineFlowmeter }}
+                    <div
+                      class="lineStateClassD"
+                      :style="{ color: line.pipelineFlowmeter == '异常' ? 'red' : ''}"
+                    >
+                      {{ line.pipelineFlowmeter }}
+                    </div>
                   </div>
-                </div>
 
-                <div
-                  class="recycle-record-content-item"
-                  :title="line.powerConsumption"
-                  style="
-                    width: 10%;
-                    float: left;
-                    text-align: left;
-                    position: relative;
-                    height: calc(35 / 10.8 * 1vh);
-                  "
-                >
                   <div
-                    class="lineStateClassD"
-                    :style="{ color: line.powerConsumption == '异常' ? 'red' : '' }"
+                    class="recycle-record-content-item"
+                    :title="line.powerConsumption"
+                    style="
+                      width: 10%;
+                      float: left;
+                      text-align: left;
+                      position: relative;
+                      height: calc(35 / 10.8 * 1vh);
+                    "
                   >
-                    {{ line.powerConsumption }}
+                    <div
+                      class="lineStateClassD"
+                      :style="{ color: line.powerConsumption == '异常' ? 'red' : '' }"
+                    >
+                      {{ line.powerConsumption }}
+                    </div>
                   </div>
-                </div>
 
-                <div
-                  class="recycle-record-content-item"
-                  :title="line.Webcam"
-                  style="
-                    width: 15%;
-                    float: left;
-                    text-align: left;
-                    position: relative;
-                    height: calc(35 / 10.8 * 1vh);
-                  "
-                >
                   <div
-                    class="lineStateClassD"
-                    :style="{ color: line.Webcam == '异常' ? 'red' : ''}"
+                    class="recycle-record-content-item"
+                    :title="line.Webcam"
+                    style="
+                      width: 15%;
+                      float: left;
+                      text-align: left;
+                      position: relative;
+                      height: calc(35 / 10.8 * 1vh);
+                    "
                   >
-                    {{ line.Webcam }}
+                    <div
+                      class="lineStateClassD"
+                      :style="{ color: line.Webcam == '异常' ? 'red' : ''}"
+                    >
+                      {{ line.Webcam }}
+                    </div>
                   </div>
-                </div>
 
-                <div
-                  class="recycle-record-content-item"
-                  :title="line.state"
-                  style="
-                    width: 25%;
-                    float: left;
-                    text-align: left;
-                    position: relative;
-                    height: calc(35 / 10.8 * 1vh);
-                  "
-                >
                   <div
-                    class="lineStateClassD"
-                    :style="{ color:line.state == '离线' ? '#A8A8A8' : '#00FF55', }"
+                    class="recycle-record-content-item"
+                    :title="line.state"
+                    style="
+                      width: 25%;
+                      float: left;
+                      text-align: left;
+                      position: relative;
+                      height: calc(35 / 10.8 * 1vh);
+                    "
                   >
-                    {{ line.state }}
+                    <div
+                      class="lineStateClassD"
+                      :style="{ color:line.state == '离线' ? '#A8A8A8' : '#00FF55', }"
+                    >
+                      {{ line.state }}
+                    </div>
                   </div>
-                </div>
 
-                
-              </div>
+                  
+                </div>
+            </vueSeamlessScroll>
             </div>
           </div>
         </div>
@@ -172,9 +174,12 @@
 </template>
 
 <script>
+import vueSeamlessScroll from 'vue-seamless-scroll'
 export default {
   name: "rightTh",
-
+  components: {
+    vueSeamlessScroll
+  },
   data() {
     return {
       rightThTitle: "",
