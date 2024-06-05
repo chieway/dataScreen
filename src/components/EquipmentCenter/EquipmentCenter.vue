@@ -119,6 +119,8 @@
         </div>
       </div>
     </el-row>
+    
+    
     <el-row class="cardBox" :gutter="80">
       <vueSeamlessScroll :data="dataCard" class="warp">
       <el-col
