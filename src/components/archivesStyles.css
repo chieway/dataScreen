@@ -16,7 +16,8 @@
 .up {
     /* background-color: #23a; */
     background: url(../assets/img/bgTwo.png) no-repeat center center;
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
+    background-size: cover;
     z-index: 1;
     width: 100%;
     height: 100%;

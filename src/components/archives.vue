@@ -10,12 +10,12 @@
   >
     <div class="boxC">
       <div class="up">
-        <div
+        <!-- <div
           v-for="(item, i) in CameraNoneData"
           :key="i"
           class="CameraNone"
           :style="item.style"
-        ></div>
+        ></div> -->
       </div>
 
       <div class="down">

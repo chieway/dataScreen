@@ -277,26 +277,35 @@
     height: 70%;
     overflow: auto;
 }
+.warp {
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
 
 .cardStyleW {
     position: relative;
     top: -2%;
     width: 96%;
-    height: 33%;
+    /* height: 33%; */
+    height: 130px;
 }
 
 .cardStyleW2 {
     position: relative;
     top: -6%;
     width: 96%;
-    height: 33%;
+    height: 130px;
+    /* height: 33%; */
 }
 
 .cardStyleW3 {
     position: relative;
     top: -10%;
     width: 96%;
-    height: 33%;
+    /* height: 33%; */
+    height: 130px;
 }
 
 .cardStyle {
@@ -392,7 +401,7 @@
 
 .cardStyleConterImgY {
     position: relative;
-    height: 110%;
+    height: 100%;
     width: 80%;
     display: flex;
     background: url(../../assets/imgcenter/serious.png) no-repeat center;
@@ -400,7 +409,7 @@
 
 .cardStyleConterImgG {
     position: relative;
-    height: 110%;
+    height: 100%;
     width: 80%;
     display: flex;
     background: url(../../assets/imgcenter/good.png) no-repeat center;
@@ -409,7 +418,7 @@
 
 .cardStyleConterImgC {
     position: relative;
-    height: 110%;
+    height: 100%;
     width: 80%;
     display: flex;
     background: url(../../assets/imgcenter/commonly.png) no-repeat center;

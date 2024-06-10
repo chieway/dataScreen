@@ -43,43 +43,51 @@
 
 
 
-
 .venueCdownBox {
     position: absolute;
     left: 50%;
     bottom: calc(14/10.8*1vh);
     transform: translate(-50%);
     width: calc(949/19.2*1vw);
+    /* overflow: hidden; */
+    overflow-x: auto;
+    /* overflow-y: hidden; */
     height: calc(52/10.8*1vh);
     /* padding: 9px calc(66/19.2*1vw); */
     box-sizing: border-box;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     /* overflow-x: auto; */
 }
+.venueCdownBox .item {
+    /* width: 100%; */
+    /* min-width: 400px; */
+    width: calc(949/19.2*1vw);
+    /* flex: 1; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* align-self: center; */
+}
+.venueCdownBox .item .desc {
+    flex: 1;
+}
 
 .venueCdownBox_box {
+    /* width: 100%; */
+    /* width: 33.3%; */
     /* width: calc(289/19.2*1vw); */
     flex: 1;
     height: 100%;
     display: flex;
     /* justify-content: space-between; */
-    align-items: center;
-
-}
-
-.venueCdownBox_boxTwo {
-    /* width: calc(200/19.2*1vw); */
-    flex: 1;
-    height: 100%;
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
+    /* align-items: center; */
 }
 
 .ybox {
-    display: block;
+    display: inline-block;
     width: 34px;
     height: 34px;
     border-radius: 50%;

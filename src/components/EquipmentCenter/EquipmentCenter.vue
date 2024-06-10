@@ -102,6 +102,8 @@
           <span class="dataStatisticsBoxText">数据统计</span>
         </div>
       </div>
+
+
       <div class="dataStatisticsBoxList">
         <div
           class="dataStatisticsBoxListBox"
@@ -117,7 +119,10 @@
         </div>
       </div>
     </el-row>
+    
+    
     <el-row class="cardBox" :gutter="80">
+      <vueSeamlessScroll :data="dataCard" class="warp">
       <el-col
         :span="6"
         v-for="(item, i) in dataCard"
@@ -164,13 +169,19 @@
           </div>
         </div>
       </el-col>
+    </vueSeamlessScroll>
     </el-row>
   </div>
 </template>
 <script>
 import "./EquipmentCenter.css";
+import vueSeamlessScroll from 'vue-seamless-scroll'
+
 export default {
   name: "equipmentCenter",
+  components: {
+    vueSeamlessScroll
+  },
   data() {
     return {
       timeInfo: {},
