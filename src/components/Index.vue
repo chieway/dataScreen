@@ -237,7 +237,7 @@ export default {
 }
 .header_left .text {
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 .header_center {
