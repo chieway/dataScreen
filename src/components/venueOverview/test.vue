@@ -84,6 +84,8 @@ export default {
               this.intervalId = setInterval(() => {
                 this.currentIndex = (this.currentIndex + 1) % this.infoContent.length;
                 var content = this.infoContent[this.currentIndex];
+
+                
                 if(this.infoWindow) {
                   this.infoWindow.close()
                 }
@@ -196,12 +198,11 @@ export default {
               const areaNode = areaNodes[0]._data.geoData.lngLatSubList
               // console.log('kkkkk',areaNode)
               const center = areaNode.filter(item => item.properties.name.includes(content)).map(item => item.properties.center)
-              // console.log('zyw',center)
-              // const a = [center[0].lat,center[0].lng]
+              const a = [center[0][0],center[0][1]]
               if(this.infoWindow) {
                 this.infoWindow.close()
               }
-              this.renderInfoWindow(content,null)
+              this.renderInfoWindow(content,a)
             }, 5000)
           }
           //更新地图视野 下钻效果
