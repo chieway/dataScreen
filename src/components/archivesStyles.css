@@ -182,7 +182,7 @@ transform:rotate(90deg);
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
 
 
 }

@@ -142,10 +142,11 @@
               align="Absmiddle"
               class="cardStyleTitleImg"
             /><span class="cardStyleTitleText">{{ item.label }}</span
-            ><el-checkbox
+            >
+            <!-- <el-checkbox
               v-model="item.checked"
               class="cardStyleCheckbox"
-            ></el-checkbox>
+            ></el-checkbox> -->
           </div>
 
           <div class="cardStyleConter">

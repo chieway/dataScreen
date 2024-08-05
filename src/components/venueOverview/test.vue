@@ -102,7 +102,8 @@ export default {
           /***清空监听的项目名称id和adcode***/
           adcodes = [];
           adcodes = [
-            100000
+            // 100000
+            440000
             // 440000 //浙江
           ];
           // this.initCity(); //获取城市区域
@@ -159,8 +160,8 @@ export default {
         var adcodes = [];
         //根据角色来绘制不同的区域
         adcodes = [
-          100000,
-          // 440000, //广东
+          // 100000,
+          440000, //广东
           // 820000, // 澳门
           // 810000, // 香港
         ];
@@ -182,6 +183,21 @@ export default {
             this.intervalId = setInterval(() => {
               this.currentIndex = (this.currentIndex + 1) % this.infoContent.length;
               var content = this.infoContent[this.currentIndex];
+              if(this.infoWindow) {
+                this.infoWindow.close()
+              }
+              this.renderInfoWindow(content,null)
+            }, 5000)
+          }else if(adcodes.join('') === '440000') {
+            this.infoContent = ['广州市','深圳市','东莞市','肇庆市','佛山市','惠州市','珠海市','中山市','江门市']
+            this.intervalId = setInterval(() => {
+              this.currentIndex = (this.currentIndex + 1) % this.infoContent.length;
+              var content = this.infoContent[this.currentIndex];
+              const areaNode = areaNodes[0]._data.geoData.lngLatSubList
+              // console.log('kkkkk',areaNode)
+              const center = areaNode.filter(item => item.properties.name.includes(content)).map(item => item.properties.center)
+              // console.log('zyw',center)
+              // const a = [center[0].lat,center[0].lng]
               if(this.infoWindow) {
                 this.infoWindow.close()
               }

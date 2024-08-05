@@ -498,7 +498,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >监控系统</span
+                    >供电系统</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -526,7 +526,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[0].msg1 }}
+                        {{ healthDegree[3].msg1 }}
                       </div>
                       <div
                         style="
@@ -558,7 +558,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[0].msg2 }}
+                        {{ healthDegree[3].msg2 }}
                       </div>
                       <div
                         style="
@@ -590,7 +590,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[0].msg3 }}
+                        {{ healthDegree[3].msg3 }}
                       </div>
                       <div
                         style="
@@ -622,7 +622,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[0].msg4 }}
+                        {{ healthDegree[3].msg4 }}
                       </div>
                       <div
                         style="
@@ -653,7 +653,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >消防系统</span
+                    >供水系统</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -681,7 +681,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[1].msg1 }}
+                        {{ healthDegree[4].msg1 }}
                       </div>
                       <div
                         style="
@@ -713,7 +713,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[1].msg2 }}
+                        {{ healthDegree[4].msg2 }}
                       </div>
                       <div
                         style="
@@ -745,7 +745,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[1].msg3 }}
+                        {{ healthDegree[4].msg3 }}
                       </div>
                       <div
                         style="
@@ -777,7 +777,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[1].msg4 }}
+                        {{ healthDegree[4].msg4 }}
                       </div>
                       <div
                         style="
@@ -808,7 +808,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >生产线</span
+                    >应急系统</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -836,7 +836,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[2].msg1 }}
+                        {{ healthDegree[5].msg1 }}
                       </div>
                       <div
                         style="
@@ -868,7 +868,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[2].msg2 }}
+                        {{ healthDegree[5].msg2 }}
                       </div>
                       <div
                         style="
@@ -900,7 +900,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[2].msg3 }}
+                        {{ healthDegree[5].msg3 }}
                       </div>
                       <div
                         style="
@@ -932,7 +932,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[2].msg4 }}
+                        {{ healthDegree[5].msg4 }}
                       </div>
                       <div
                         style="
@@ -967,7 +967,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >监控系统</span
+                    >零件库存</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -995,7 +995,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[0].msg1 }}
+                        {{ healthDegree[6].msg1 }}
                       </div>
                       <div
                         style="
@@ -1027,7 +1027,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[0].msg2 }}
+                        {{ healthDegree[6].msg2 }}
                       </div>
                       <div
                         style="
@@ -1059,7 +1059,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[0].msg3 }}
+                        {{ healthDegree[6].msg3 }}
                       </div>
                       <div
                         style="
@@ -1091,7 +1091,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[0].msg4 }}
+                        {{ healthDegree[6].msg4 }}
                       </div>
                       <div
                         style="
@@ -1122,7 +1122,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >消防系统</span
+                    >维修库存</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -1150,7 +1150,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[1].msg1 }}
+                        {{ healthDegree[7].msg1 }}
                       </div>
                       <div
                         style="
@@ -1182,7 +1182,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[1].msg2 }}
+                        {{ healthDegree[7].msg2 }}
                       </div>
                       <div
                         style="
@@ -1214,7 +1214,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[1].msg3 }}
+                        {{ healthDegree[7].msg3 }}
                       </div>
                       <div
                         style="
@@ -1246,7 +1246,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[1].msg4 }}
+                        {{ healthDegree[7].msg4 }}
                       </div>
                       <div
                         style="
@@ -1277,7 +1277,7 @@
                       font-weight: 500;
                       color: #1ac9ff;
                     "
-                    >生产线</span
+                    >成品库存</span
                   >
                 </div>
                 <div class="center-center" style="width: 100%; height: 92%">
@@ -1305,7 +1305,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[2].msg1 }}
+                        {{ healthDegree[8].msg1 }}
                       </div>
                       <div
                         style="
@@ -1337,7 +1337,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[2].msg2 }}
+                        {{ healthDegree[8].msg2 }}
                       </div>
                       <div
                         style="
@@ -1369,7 +1369,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[2].msg3 }}
+                        {{ healthDegree[8].msg3 }}
                       </div>
                       <div
                         style="
@@ -1401,7 +1401,7 @@
                           color: #ffffff;
                         "
                       >
-                        {{ healthDegree[2].msg4 }}
+                        {{ healthDegree[8].msg4 }}
                       </div>
                       <div
                         style="
@@ -1689,6 +1689,48 @@ export default {
           msg3: 1,
           msg4: 1,
         },
+        {
+          chart: 99,
+          msg1: 32,
+          msg2: 1,
+          msg3: 0,
+          msg4: 2,
+        },
+        {
+          chart: 96,
+          msg1: 8,
+          msg2: 0,
+          msg3: 0,
+          msg4: 1,
+        },
+        {
+          chart: 98,
+          msg1: 3,
+          msg2: 0,
+          msg3: 0,
+          msg4: 0,
+        },
+        {
+          chart: 75,
+          msg1: 1988,
+          msg2: 27,
+          msg3: 1,
+          msg4: 2,
+        },
+        {
+          chart: 65,
+          msg1: 165,
+          msg2: 5,
+          msg3: 0,
+          msg4: 1,
+        },
+        {
+          chart: 60,
+          msg1: 51,
+          msg2: 1,
+          msg3: 1,
+          msg4: 1,
+        },
       ],
     };
   },
@@ -1697,13 +1739,13 @@ export default {
     this.draw(100, "main1");
     this.draw(92, "main2");
 
-    this.draw(97, "main3");
-    this.draw(100, "main4");
-    this.draw(92, "main5");
+    this.draw(99, "main3");
+    this.draw(96, "main4");
+    this.draw(98, "main5");
 
-    this.draw(97, "main6");
-    this.draw(100, "main7");
-    this.draw(92, "main8");
+    this.draw(75, "main6");
+    this.draw(65, "main7");
+    this.draw(60, "main8");
     this.funpie();
     this.funline();
   },
@@ -2086,7 +2128,8 @@ export default {
         legend: {
           data: ['一级告警','二级告警','三级告警','四级告警'],
           // data: ["同比", "环比"],
-          left: 600,
+          // left: 600,
+          right: 70,
           textStyle: {
             color: "#fff",
           },

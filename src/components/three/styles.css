@@ -34,10 +34,10 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 100%;
+        width: 141px;
         height: 100%;
         background: url(../../assets/three/server.png) no-repeat center center;
-        background-size: 100% 100%;
+        background-size: 60% 60%;
         animation: rotate2 4s linear infinite;
     }
 
@@ -71,10 +71,10 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 100%;
+        width: 140%;
         height: 100%;
         background: url(../../assets/three/134.png) no-repeat center center;
-        background-size: 100% 100%;
+        background-size: 60% 60%;
         animation: rotate2 4s linear infinite;
     }
 

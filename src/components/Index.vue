@@ -232,8 +232,8 @@ export default {
   /* justify-content: center; */
 }
 .header_left .logo {
-  width: 110px;
-  height: 60px;
+  width: 130px;
+  height: 50px;
 }
 .header_left .text {
   color: #fff;

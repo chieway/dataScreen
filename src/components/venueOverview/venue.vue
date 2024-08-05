@@ -186,13 +186,13 @@ export default {
           color: "rgba(234, 26, 26, 1)",
           state: "严重",
           long: "2",
-          flag: "自动化设备"
+          flag: "莱福光电所有设备未知原因全部离线，请尽快联系客户确认情况！"
         },
         {
           color: "rgba(248, 161, 0, 1)",
           state: "重要",
           long: "3",
-          flag: "自动化设备"
+          flag: "有8台设备激光头使用时长接近更换周期，请尽快安排更换事宜！"
         },
       ],
       venueRBoxChangeBoxData: [
@@ -327,7 +327,7 @@ export default {
       ],
       classOption: {
         limitMoveNum: 2,
-        direction: 3,
+        direction: 6,
         // singleWidth: 100,
       }
     };
