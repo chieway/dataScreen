@@ -327,7 +327,7 @@ export default {
       ],
       classOption: {
         limitMoveNum: 2,
-        direction: 6,
+        direction: 2,
         // singleWidth: 100,
       }
     };
